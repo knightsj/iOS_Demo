@@ -19,4 +19,7 @@
 - 将tableview的datasource单独抽取出来作为一个类，减少viewcontroller的代码量。
 - cell的绘制方法使用block函数调用。
 
+## [5]. associate_object
+- 在分类中使用关联对象给类添加属性。
+
 
