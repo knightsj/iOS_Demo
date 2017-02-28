@@ -20,6 +20,34 @@
 - cell的绘制方法使用block函数调用。
 
 ## [5]. associate_object
-- 在分类中使用关联对象给类添加属性。
+在分类中使用关联对象给类添加属性。
+
+## [6]. collectionview_masonry_layout
+瀑布流的实现，自定义cell的垂直，水平间距，以及列数。
+
+![](http://oih3a9o4n.bkt.clouddn.com/masonry_collectionview.gif)
+
+```objc
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CellIdentifier];
+    SSJMasonryLayout *layout = (SSJMasonryLayout*)self.collectionView.collectionViewLayout;
+    layout.delegate = self;
+    layout.numberOfColumns = 4;
+    layout.itemHorizontalSpacing = 10;
+    layout.itemVerticalSpacing = 20;
+}
+
+#pragma mark- SSJMasonryLayoutDeleagte
+- (CGFloat) collectionView:(UICollectionView*) collectionView
+                    layout:(SSJMasonryLayout*) layout
+  heightForItemAtIndexPath:(NSIndexPath*) indexPath {
+    
+    CGFloat randomHeight = 100 + (arc4random() % 140);
+    return randomHeight;
+}
+```
 
 
