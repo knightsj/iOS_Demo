@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport"
+                content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                    <title>J_Knight JS调用OC代码</title>
+    </head>
+    
+    <body>
+        <div id = "tab">
+            <p>1. 点击下面的按钮，弹出native提示框</p>
+            <button onclick="tabAndLogAction();" style="">点击我之后，在提示框中提示"我被点击啦"</button>
+            <br>
+            </br>
+        </div>
+        
+        <div id = "input">
+            <p>2. 输入文字，点击按钮之后，弹出native提示框</p>
+            <input type="text"  id="webTextField" placeholder="请输入要打印的文字" />
+            <button onclick="logTextFieldInput(document.getElementById('webTextField').value);">点击我之后，提示框中提示文本框里面的文字</button>
+        </div>
+    </body>
+    
+    
+    
+</html>
