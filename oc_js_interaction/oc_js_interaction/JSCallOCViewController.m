@@ -8,7 +8,9 @@
 
 #import "JSCallOCViewController.h"
 
+
 @interface JSCallOCViewController ()
+
 
 @end
 
@@ -26,7 +28,7 @@
     
     __weak typeof(self)this = self;
     
-    self.context[@"tabAndLogAction"] = ^(){
+    self.context[@"tapAndLogAction"] = ^(){
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [this showAlertViewWithMessage:@"我被点击啦"];
@@ -39,7 +41,8 @@
             NSString *message = textFieldString.length? textFieldString : @"请在提示框内输入文字哦";
             [this showAlertViewWithMessage:message];
         });
-    };    
+    };
+    
 }
 
 @end

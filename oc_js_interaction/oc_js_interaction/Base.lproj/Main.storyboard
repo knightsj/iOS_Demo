@@ -49,14 +49,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwB-Zu-ZaW">
-                                <rect key="frame" x="85" y="339" width="205" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="gse-qb-bSH"/>
-                                </constraints>
+                                <rect key="frame" x="30" y="317" width="316" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="进入 JS 调用 OC 代码 界面"/>
+                                <state key="normal" title="进入 JS 调用 OC 代码 界面（使用block）"/>
                                 <connections>
                                     <action selector="js_call_oc:" destination="8Zw-5s-meE" eventType="touchUpInside" id="cTA-tq-fFs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsN-iq-yxr">
+                                <rect key="frame" x="15.5" y="422" width="344" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="2mB-Nj-S5b"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="Eke-fV-3tV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="进入 JS 调用 OC 代码 界面（使用JSExport）"/>
+                                <connections>
+                                    <action selector="js_call_oc_jsExport:" destination="8Zw-5s-meE" eventType="touchUpInside" id="ON6-7B-gQp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -64,8 +73,10 @@
                         <constraints>
                             <constraint firstItem="g4L-Yr-nqy" firstAttribute="top" secondItem="qoP-pN-iEg" secondAttribute="bottom" constant="145" id="0xs-Ts-p4w"/>
                             <constraint firstItem="g4L-Yr-nqy" firstAttribute="centerX" secondItem="PTs-FA-r87" secondAttribute="centerX" id="4jw-6Z-xZl"/>
-                            <constraint firstItem="KwB-Zu-ZaW" firstAttribute="centerX" secondItem="PTs-FA-r87" secondAttribute="centerX" id="kiu-nY-qCG"/>
-                            <constraint firstItem="KwB-Zu-ZaW" firstAttribute="top" secondItem="g4L-Yr-nqy" secondAttribute="bottom" constant="92" id="sMQ-Iv-jUb"/>
+                            <constraint firstItem="HsN-iq-yxr" firstAttribute="top" secondItem="KwB-Zu-ZaW" secondAttribute="bottom" constant="72" id="Fim-6J-sKf"/>
+                            <constraint firstItem="KwB-Zu-ZaW" firstAttribute="centerX" secondItem="PTs-FA-r87" secondAttribute="centerX" id="kfv-gJ-aIa"/>
+                            <constraint firstItem="KwB-Zu-ZaW" firstAttribute="centerY" secondItem="PTs-FA-r87" secondAttribute="centerY" id="nS8-R3-l8h"/>
+                            <constraint firstItem="HsN-iq-yxr" firstAttribute="centerX" secondItem="PTs-FA-r87" secondAttribute="centerX" id="seP-Fg-bOu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="OC 与 JS 交互" id="Gf0-wm-nv2"/>
