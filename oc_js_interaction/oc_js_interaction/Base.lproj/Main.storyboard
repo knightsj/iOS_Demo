@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -65,7 +66,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="进入 JS 调用 OC 代码 界面（使用JSExport）"/>
                                 <connections>
-                                    <action selector="js_call_oc_jsExport:" destination="8Zw-5s-meE" eventType="touchUpInside" id="ON6-7B-gQp"/>
+                                    <segue destination="AzU-oG-DGC" kind="push" id="wVF-OC-76W"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,6 +85,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6XL-mK-pa4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-358" y="-27"/>
+        </scene>
+        <!--JSExport-->
+        <scene sceneID="d2s-Kh-I1G">
+            <objects>
+                <viewController id="AzU-oG-DGC" customClass="JSCallOCJSExportViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mom-Kd-6c5"/>
+                        <viewControllerLayoutGuide type="bottom" id="260-mZ-cZm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xEA-U4-8YZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输出计算结果：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1j-Mo-JBn">
+                                <rect key="frame" x="49" y="323" width="122" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="eO2-cp-64W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIE-6Z-zut">
+                                <rect key="frame" x="196" y="323" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqy-p7-WC4">
+                                <rect key="frame" x="20" y="211" width="334" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">JS调用遵循JSExport协议的OC对象的方法
+来计算3+2的结果：</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y1j-Mo-JBn" firstAttribute="leading" secondItem="xEA-U4-8YZ" secondAttribute="leadingMargin" constant="33" id="3TX-Tn-hEC"/>
+                            <constraint firstItem="y1j-Mo-JBn" firstAttribute="centerY" secondItem="xEA-U4-8YZ" secondAttribute="centerY" id="eo7-Cl-Dir"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="JSExport" id="06i-Ul-e0f"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="TIE-6Z-zut" id="gsk-Bt-esC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghJ-lt-AIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="432.80000000000001" y="-27.436281859070466"/>
         </scene>
     </scenes>
 </document>

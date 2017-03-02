@@ -35,6 +35,7 @@
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CellIdentifier];
     SSJMasonryLayout *layout = (SSJMasonryLayout*)self.collectionView.collectionViewLayout;
     layout.delegate = self;
+    //自定义列数，cell的水平距离，cell的垂直距离
     layout.numberOfColumns = 4;
     layout.itemHorizontalSpacing = 10;
     layout.itemVerticalSpacing = 20;
@@ -44,7 +45,7 @@
 - (CGFloat) collectionView:(UICollectionView*) collectionView
                     layout:(SSJMasonryLayout*) layout
   heightForItemAtIndexPath:(NSIndexPath*) indexPath {
-    
+    //提供cell的随机高度
     CGFloat randomHeight = 100 + (arc4random() % 140);
     return randomHeight;
 }
@@ -52,5 +53,5 @@
 
 ## [7]. oc_js_interaction
 OC与JS代码的简单交互。
-![](http://oih3a9o4n.bkt.clouddn.com/oc_js_2.png)
+![](http://oih3a9o4n.bkt.clouddn.com/oc_js_3.png)
 

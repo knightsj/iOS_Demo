@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "OCCallJSViewController.h"
 #import "JSCallOCViewController.h"
-#import "JSCallOCJSExportViewController.h"
 
 @implementation ViewController
 
@@ -25,11 +24,6 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (IBAction)js_call_oc_jsExport:(UIButton *)sender {
-    
-    JSCallOCJSExportViewController *vc = [[JSCallOCJSExportViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-}
 
 
 @end
