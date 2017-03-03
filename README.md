@@ -53,5 +53,5 @@
 
 ## [7]. oc_js_interaction
 OC与JS代码的简单交互。
-![](http://oih3a9o4n.bkt.clouddn.com/oc_js_3.png)
+![](http://oih3a9o4n.bkt.clouddn.com/oc_js_4.png)
 
