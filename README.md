@@ -1,4 +1,4 @@
-# iOS_Demo
+ # iOS_Demo
 保存工作和学习过程中使用，学习到的Demo
 
 
@@ -54,4 +54,46 @@
 ## [7]. oc_js_interaction
 OC与JS代码的简单交互。
 ![](http://oih3a9o4n.bkt.clouddn.com/oc_js_4.png)
+
+## [8]. access_private_property
+用KVC和runtime改变私有属性。
+
+#### 1. 定义公有属性和私有属性：
+
+```objc
+@interface Person : NSObject
+@property (nonatomic, copy) NSString *name;//公共属性
+@end
+
+@interface Person()
+@property (nonatomic, copy) NSString *job;//私有属性
+@end
+
+@implementation Person
+{
+    NSString *_country;//私有成员变量
+}
+```
+
+#### 2. 使用kvc修改公共属性和私有属性以及私有成员变量
+```objc
+[person setValue:@"jack" forKey:@"name"];//公共属性
+[person setValue:@"coder" forKey:@"job"];//私有属性
+[person setValue:@"China" forKey:@"country"];//私有成员变量
+NSLog(@"kvc改变成员变量的值：%@",person);//name:jack, job:coder, country:China
+```
+
+####3. 使用runtime修改私有属性以及私有成员变量
+```objc
+[self changeIvarOfObject:person withIvarName:@"_job" toValue:@"manager"];
+[self changeIvarOfObject:person withIvarName:@"_country" toValue:@"America"];
+NSLog(@"runtime 改变成员变量的值：%@",person);//name:Bob, job:manager, country:America
+
+- (void)changeIvarOfObject:(id)object withIvarName:(NSString *)name toValue:(NSString *)value
+{
+    Ivar ivar = class_getInstanceVariable([object class], [name UTF8String]);    
+    object_setIvar(object, ivar, value);
+}
+```
+
 
