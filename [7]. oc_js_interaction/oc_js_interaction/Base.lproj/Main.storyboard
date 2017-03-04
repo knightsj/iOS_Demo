@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XBA-NA-66v">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="MRQ-fa-orv">
+            <objects>
+                <navigationController id="XBA-NA-66v" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="usq-6y-jAU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8Zw-5s-meE" kind="relationship" relationship="rootViewController" id="MgS-3Y-PjG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYc-wr-nus" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1116" y="-26"/>
+        </scene>
+        <!--OC 与 JS 交互-->
+        <scene sceneID="bu6-b9-7uZ">
+            <objects>
+                <viewController id="8Zw-5s-meE" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qoP-pN-iEg"/>
+                        <viewControllerLayoutGuide type="bottom" id="46R-hy-JvW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PTs-FA-r87">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4L-Yr-nqy">
+                                <rect key="frame" x="85" y="209" width="205" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="s87-TJ-RLy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="进入 OC 调用 JS 代码 界面"/>
+                                <connections>
+                                    <action selector="oc_call_js:" destination="8Zw-5s-meE" eventType="touchUpInside" id="dDX-zh-kJC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwB-Zu-ZaW">
+                                <rect key="frame" x="30" y="317" width="316" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="进入 JS 调用 OC 代码 界面（使用block）"/>
+                                <connections>
+                                    <action selector="js_call_oc:" destination="8Zw-5s-meE" eventType="touchUpInside" id="cTA-tq-fFs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsN-iq-yxr">
+                                <rect key="frame" x="15.5" y="422" width="344" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="2mB-Nj-S5b"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="Eke-fV-3tV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="进入 JS 调用 OC 代码 界面（使用JSExport）"/>
+                                <connections>
+                                    <segue destination="AzU-oG-DGC" kind="push" id="wVF-OC-76W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g4L-Yr-nqy" firstAttribute="top" secondItem="qoP-pN-iEg" secondAttribute="bottom" constant="145" id="0xs-Ts-p4w"/>
+                            <constraint firstItem="g4L-Yr-nqy" firstAttribute="centerX" secondItem="PTs-FA-r87" secondAttribute="centerX" id="4jw-6Z-xZl"/>
+                            <constraint firstItem="HsN-iq-yxr" firstAttribute="top" secondItem="KwB-Zu-ZaW" secondAttribute="bottom" constant="72" id="Fim-6J-sKf"/>
+                            <constraint firstItem="KwB-Zu-ZaW" firstAttribute="centerX" secondItem="PTs-FA-r87" secondAttribute="centerX" id="kfv-gJ-aIa"/>
+                            <constraint firstItem="KwB-Zu-ZaW" firstAttribute="centerY" secondItem="PTs-FA-r87" secondAttribute="centerY" id="nS8-R3-l8h"/>
+                            <constraint firstItem="HsN-iq-yxr" firstAttribute="centerX" secondItem="PTs-FA-r87" secondAttribute="centerX" id="seP-Fg-bOu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="OC 与 JS 交互" id="Gf0-wm-nv2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6XL-mK-pa4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-358" y="-27"/>
+        </scene>
+        <!--JSExport-->
+        <scene sceneID="d2s-Kh-I1G">
+            <objects>
+                <viewController id="AzU-oG-DGC" customClass="JSCallOCJSExportViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mom-Kd-6c5"/>
+                        <viewControllerLayoutGuide type="bottom" id="260-mZ-cZm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xEA-U4-8YZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输出计算结果：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1j-Mo-JBn">
+                                <rect key="frame" x="49" y="323" width="122" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="eO2-cp-64W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIE-6Z-zut">
+                                <rect key="frame" x="196" y="323" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqy-p7-WC4">
+                                <rect key="frame" x="20" y="211" width="334" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">JS调用遵循JSExport协议的OC对象的方法
+来计算3+2的结果：</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y1j-Mo-JBn" firstAttribute="leading" secondItem="xEA-U4-8YZ" secondAttribute="leadingMargin" constant="33" id="3TX-Tn-hEC"/>
+                            <constraint firstItem="y1j-Mo-JBn" firstAttribute="centerY" secondItem="xEA-U4-8YZ" secondAttribute="centerY" id="eo7-Cl-Dir"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="JSExport" id="06i-Ul-e0f"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="TIE-6Z-zut" id="gsk-Bt-esC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghJ-lt-AIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="432.80000000000001" y="-27.436281859070466"/>
+        </scene>
+    </scenes>
+</document>
