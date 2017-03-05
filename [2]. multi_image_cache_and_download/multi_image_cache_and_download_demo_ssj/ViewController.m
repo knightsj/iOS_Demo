@@ -134,8 +134,6 @@
 #pragma mark- Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-//    [self.tableView reloadData];
     _dataCount = self.appInfos.count;
 }
 
@@ -150,7 +148,7 @@
 #pragma mark- Lazy Loads
 -(NSOperationQueue*)queue
 {
-    if (_queue == nil) {
+    if (!_queue) {
         _queue = [[NSOperationQueue alloc] init];
         _queue.maxConcurrentOperationCount = 5;
     }
@@ -159,7 +157,7 @@
 
 -(NSCache*)imageCache
 {
-    if (_imageCache == nil) {
+    if (!_imageCache) {
         _imageCache = [[NSCache alloc] init];
     }
     return _imageCache ;
@@ -167,7 +165,7 @@
 
 -(NSArray*)appInfos
 {
-    if (_appInfos == nil) {
+    if (!_appInfos) {
         
         NSArray *arrI = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"appsInfo.plist" ofType:nil]];
         NSMutableArray *arrM = [NSMutableArray array];
@@ -182,7 +180,7 @@
 
 -(NSMutableDictionary*)operations
 {
-    if (_operations == nil) {
+    if (!_operations) {
         _operations = [NSMutableDictionary dictionary];
     }
     return _operations;
