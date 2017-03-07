@@ -136,3 +136,46 @@ NSLog(@"runtime 改变成员变量的值：%@",person);//name:Bob, job:manager, 
 ```
 ![](http://oih3a9o4n.bkt.clouddn.com/custom_segue.gif)
 
+## [10]. mvvm_kvo_two_way_binding
+
+用FBKVOController实现的mvvm的双向绑定。
+
+#### viewmodel监听model的变化：
+```objc
+//模拟网络请求
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        //新请求下来一个model
+        self.model = [[SJModel alloc] init];
+        self.model.number = arc4random() % 100;;
+        
+        //viewmodel监听model的改变
+        [self.KVOController observe:self.model keyPath:@"number" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
+             NSLog(@"viewmodel监听到了model的改变后，立即改变自己被控制器监听的属性");
+             self.contentStr = [self convertNumber:self.model.number];
+            
+        }];
+    });
+```
+#### view监听viewmodel的变化：
+
+```objc
+- (instancetype)initWithViewModel:(SJViewModel *)viewModel
+{
+    self = [super init];
+    
+    if (self) {
+        
+        self.viewModel = viewModel;
+        
+        //view监听viewmodel的contentStr属性的改变，一旦改变，刷新自己
+        [self.KVOController observe:self.viewModel keyPath:@"contentStr" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
+            NSLog(@"当view监听到了viewmodel的改变后，立即改变自己");
+            self.label.text = self.viewModel.contentStr;
+        }];
+    }
+    return self;
+}
+```
+
+
