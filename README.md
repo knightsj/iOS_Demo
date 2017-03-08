@@ -178,4 +178,7 @@ NSLog(@"runtime 改变成员变量的值：%@",person);//name:Bob, job:manager, 
 }
 ```
 
+## [11]. multi_thread_communication
+线程通信的几个例子：NSOperation，GCD，NSObject
+
 

@@ -32,7 +32,6 @@
         [self.KVOController observe:self.model keyPath:@"number" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
              NSLog(@"viewmodel监听到了model的改变后，立即改变自己被控制器监听的属性");
              self.contentStr = [self convertNumber:self.model.number];
-            
         }];
     });
 }
