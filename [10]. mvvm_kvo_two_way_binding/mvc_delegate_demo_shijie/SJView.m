@@ -29,8 +29,9 @@
         self.viewModel = viewModel;
         
         //view监听viewmodel的contentStr属性的改变，一旦改变，刷新自己
-        [self.KVOController observe:self.viewModel keyPath:@"contentStr" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
+        [self.KVOController observe:self.viewModel keyPath:@"contentStr" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
             NSLog(@"当view监听到了viewmodel的改变后，立即改变自己");
+            NSLog(@"=======================================");
             self.label.text = self.viewModel.contentStr;
         }];
     }

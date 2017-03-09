@@ -182,3 +182,6 @@ NSLog(@"runtime 改变成员变量的值：%@",person);//name:Bob, job:manager, 
 线程通信的几个例子：NSOperation，GCD，NSObject
 
 
+## [12]. gcd_demo
+介绍了GCD的API：dispatch_barrier，dispatch_wait，dispatch_group，dispatch_apply等
+
