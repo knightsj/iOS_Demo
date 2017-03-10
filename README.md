@@ -185,3 +185,13 @@ NSLog(@"runtime 改变成员变量的值：%@",person);//name:Bob, job:manager, 
 ## [12]. gcd_demo
 介绍了GCD的API：dispatch_barrier，dispatch_wait，dispatch_group，dispatch_apply等
 
+## [13]. autoresizing_demo
+由xib生成的view默认会跟随父控件大小的变化而变化。如果不让二者有依赖性，需要设置view的autoresizingMask属性。
+
+```objc
+UIView *subview = [[NSBundle mainBundle] loadNibNamed:@"subview" owner:nil options:nil].firstObject;
+    
+//不让xib的view随着父控件的大小而变化
+subview.autoresizingMask = UIViewAutoresizingNone;
+```
+
