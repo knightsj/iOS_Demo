@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB67ED5C1E792E9900943425 /* SJStaticTableViewCell+MeAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB67ED5B1E792E9900943425 /* SJStaticTableViewCell+MeAvatar.m */; };
+		CB67ED5F1E79309500943425 /* SJStaticTableViewCell+AccessoryDisclosureIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CB67ED5E1E79309500943425 /* SJStaticTableViewCell+AccessoryDisclosureIndicator.m */; };
+		CB67EDA91E79405E00943425 /* SJStaticTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB67EDA81E79405E00943425 /* SJStaticTableView.m */; };
+		CB67EDAC1E79409700943425 /* SJStaticTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CB67EDAB1E79409700943425 /* SJStaticTableViewDataSource.m */; };
+		CB67EDB21E795B3700943425 /* SJStaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB67EDB11E795B3700943425 /* SJStaticTableViewController.m */; };
+		CB67EDB51E795B8400943425 /* SJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB67EDB41E795B8400943425 /* SJMeViewController.m */; };
 		CB6B9B0D1E77AD4B004C998D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6B9B0C1E77AD4B004C998D /* main.m */; };
 		CB6B9B101E77AD4B004C998D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6B9B0F1E77AD4B004C998D /* AppDelegate.m */; };
 		CB6B9B161E77AD4B004C998D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6B9B141E77AD4B004C998D /* Main.storyboard */; };
@@ -16,13 +22,13 @@
 		CB6B9B311E77AD4B004C998D /* SSJStaticTableViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6B9B301E77AD4B004C998D /* SSJStaticTableViewDemoUITests.m */; };
 		CB6B9B401E77AFFD004C998D /* SSJStaticTableviewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6B9B3F1E77AFFD004C998D /* SSJStaticTableviewCellViewModel.m */; };
 		CB6B9B431E77B01B004C998D /* SSJStaticTableviewSectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6B9B421E77B01B004C998D /* SSJStaticTableviewSectionViewModel.m */; };
-		CB6B9B461E77B042004C998D /* SSJStaticTableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6B9B451E77B042004C998D /* SSJStaticTableviewCell.m */; };
 		CB6B9B491E77BAF6004C998D /* SSJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6B9B481E77BAF6004C998D /* SSJMeViewController.m */; };
 		CB6B9B4E1E77E608004C998D /* SSJSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6B9B4D1E77E608004C998D /* SSJSettingViewController.m */; };
 		CB6B9B511E77E81B004C998D /* SSJStaticTavleviewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6B9B501E77E81B004C998D /* SSJStaticTavleviewDataSource.m */; };
-		CB6B9B541E780768004C998D /* SSJStaticMeAvatarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6B9B531E780768004C998D /* SSJStaticMeAvatarTableViewCell.m */; };
 		CB6B9B581E780971004C998D /* code@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB6B9B571E780971004C998D /* code@2x.png */; };
 		CB6B9B5C1E7811B6004C998D /* avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB6B9B5B1E7811B6004C998D /* avatar@2x.png */; };
+		CB6B9B621E78E6BB004C998D /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6B9B611E78E6BB004C998D /* Factory.m */; };
+		CB6B9B6F1E78EB98004C998D /* SJStaticTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6B9B6E1E78EB98004C998D /* SJStaticTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +49,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB67ED5A1E792E9900943425 /* SJStaticTableViewCell+MeAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SJStaticTableViewCell+MeAvatar.h"; sourceTree = "<group>"; };
+		CB67ED5B1E792E9900943425 /* SJStaticTableViewCell+MeAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SJStaticTableViewCell+MeAvatar.m"; sourceTree = "<group>"; };
+		CB67ED5D1E79309500943425 /* SJStaticTableViewCell+AccessoryDisclosureIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SJStaticTableViewCell+AccessoryDisclosureIndicator.h"; sourceTree = "<group>"; };
+		CB67ED5E1E79309500943425 /* SJStaticTableViewCell+AccessoryDisclosureIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SJStaticTableViewCell+AccessoryDisclosureIndicator.m"; sourceTree = "<group>"; };
+		CB67EDA71E79405E00943425 /* SJStaticTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJStaticTableView.h; sourceTree = "<group>"; };
+		CB67EDA81E79405E00943425 /* SJStaticTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJStaticTableView.m; sourceTree = "<group>"; };
+		CB67EDAA1E79409700943425 /* SJStaticTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJStaticTableViewDataSource.h; sourceTree = "<group>"; };
+		CB67EDAB1E79409700943425 /* SJStaticTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJStaticTableViewDataSource.m; sourceTree = "<group>"; };
+		CB67EDB01E795B3700943425 /* SJStaticTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJStaticTableViewController.h; sourceTree = "<group>"; };
+		CB67EDB11E795B3700943425 /* SJStaticTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJStaticTableViewController.m; sourceTree = "<group>"; };
+		CB67EDB31E795B8400943425 /* SJMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJMeViewController.h; sourceTree = "<group>"; };
+		CB67EDB41E795B8400943425 /* SJMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJMeViewController.m; sourceTree = "<group>"; };
 		CB6B9B081E77AD4B004C998D /* SSJStaticTableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSJStaticTableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6B9B0C1E77AD4B004C998D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CB6B9B0E1E77AD4B004C998D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,8 +79,6 @@
 		CB6B9B3F1E77AFFD004C998D /* SSJStaticTableviewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJStaticTableviewCellViewModel.m; sourceTree = "<group>"; };
 		CB6B9B411E77B01B004C998D /* SSJStaticTableviewSectionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJStaticTableviewSectionViewModel.h; sourceTree = "<group>"; };
 		CB6B9B421E77B01B004C998D /* SSJStaticTableviewSectionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJStaticTableviewSectionViewModel.m; sourceTree = "<group>"; };
-		CB6B9B441E77B042004C998D /* SSJStaticTableviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJStaticTableviewCell.h; sourceTree = "<group>"; };
-		CB6B9B451E77B042004C998D /* SSJStaticTableviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJStaticTableviewCell.m; sourceTree = "<group>"; };
 		CB6B9B471E77BAF6004C998D /* SSJMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJMeViewController.h; sourceTree = "<group>"; };
 		CB6B9B481E77BAF6004C998D /* SSJMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJMeViewController.m; sourceTree = "<group>"; };
 		CB6B9B4B1E77C9D0004C998D /* SSJConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJConst.h; sourceTree = "<group>"; };
@@ -70,10 +86,12 @@
 		CB6B9B4D1E77E608004C998D /* SSJSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJSettingViewController.m; sourceTree = "<group>"; };
 		CB6B9B4F1E77E81B004C998D /* SSJStaticTavleviewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJStaticTavleviewDataSource.h; sourceTree = "<group>"; };
 		CB6B9B501E77E81B004C998D /* SSJStaticTavleviewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJStaticTavleviewDataSource.m; sourceTree = "<group>"; };
-		CB6B9B521E780768004C998D /* SSJStaticMeAvatarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJStaticMeAvatarTableViewCell.h; sourceTree = "<group>"; };
-		CB6B9B531E780768004C998D /* SSJStaticMeAvatarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJStaticMeAvatarTableViewCell.m; sourceTree = "<group>"; };
 		CB6B9B571E780971004C998D /* code@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "code@2x.png"; sourceTree = "<group>"; };
 		CB6B9B5B1E7811B6004C998D /* avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar@2x.png"; sourceTree = "<group>"; };
+		CB6B9B601E78E6BB004C998D /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
+		CB6B9B611E78E6BB004C998D /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factory.m; sourceTree = "<group>"; };
+		CB6B9B6D1E78EB98004C998D /* SJStaticTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJStaticTableViewCell.h; sourceTree = "<group>"; };
+		CB6B9B6E1E78EB98004C998D /* SJStaticTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJStaticTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +119,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB67ED601E79351600943425 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CB6B9B5B1E7811B6004C998D /* avatar@2x.png */,
+				CB6B9B571E780971004C998D /* code@2x.png */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		CB67ED611E79353400943425 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB6B9B601E78E6BB004C998D /* Factory.h */,
+				CB6B9B611E78E6BB004C998D /* Factory.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CB67ED621E79353F00943425 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CB6B9B471E77BAF6004C998D /* SSJMeViewController.h */,
+				CB6B9B481E77BAF6004C998D /* SSJMeViewController.m */,
+				CB6B9B4C1E77E608004C998D /* SSJSettingViewController.h */,
+				CB6B9B4D1E77E608004C998D /* SSJSettingViewController.m */,
+				CB67EDB01E795B3700943425 /* SJStaticTableViewController.h */,
+				CB67EDB11E795B3700943425 /* SJStaticTableViewController.m */,
+				CB67EDB31E795B8400943425 /* SJMeViewController.h */,
+				CB67EDB41E795B8400943425 /* SJMeViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		CB67ED631E79354C00943425 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB6B9B6D1E78EB98004C998D /* SJStaticTableViewCell.h */,
+				CB6B9B6E1E78EB98004C998D /* SJStaticTableViewCell.m */,
+				CB67ED5D1E79309500943425 /* SJStaticTableViewCell+AccessoryDisclosureIndicator.h */,
+				CB67ED5E1E79309500943425 /* SJStaticTableViewCell+AccessoryDisclosureIndicator.m */,
+				CB67ED5A1E792E9900943425 /* SJStaticTableViewCell+MeAvatar.h */,
+				CB67ED5B1E792E9900943425 /* SJStaticTableViewCell+MeAvatar.m */,
+				CB67EDA71E79405E00943425 /* SJStaticTableView.h */,
+				CB67EDA81E79405E00943425 /* SJStaticTableView.m */,
+				CB67EDAA1E79409700943425 /* SJStaticTableViewDataSource.h */,
+				CB67EDAB1E79409700943425 /* SJStaticTableViewDataSource.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CB67EDA31E7938D900943425 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB6B9B3E1E77AFFD004C998D /* SSJStaticTableviewCellViewModel.h */,
+				CB6B9B3F1E77AFFD004C998D /* SSJStaticTableviewCellViewModel.m */,
+				CB6B9B411E77B01B004C998D /* SSJStaticTableviewSectionViewModel.h */,
+				CB6B9B421E77B01B004C998D /* SSJStaticTableviewSectionViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		CB6B9AFF1E77AD4B004C998D = {
 			isa = PBXGroup;
 			children = (
@@ -124,30 +203,15 @@
 		CB6B9B0A1E77AD4B004C998D /* SSJStaticTableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				CB6B9B0E1E77AD4B004C998D /* AppDelegate.h */,
-				CB6B9B0F1E77AD4B004C998D /* AppDelegate.m */,
-				CB6B9B141E77AD4B004C998D /* Main.storyboard */,
-				CB6B9B171E77AD4B004C998D /* Assets.xcassets */,
-				CB6B9B191E77AD4B004C998D /* LaunchScreen.storyboard */,
-				CB6B9B1C1E77AD4B004C998D /* Info.plist */,
-				CB6B9B0B1E77AD4B004C998D /* Supporting Files */,
-				CB6B9B3E1E77AFFD004C998D /* SSJStaticTableviewCellViewModel.h */,
-				CB6B9B3F1E77AFFD004C998D /* SSJStaticTableviewCellViewModel.m */,
-				CB6B9B411E77B01B004C998D /* SSJStaticTableviewSectionViewModel.h */,
-				CB6B9B421E77B01B004C998D /* SSJStaticTableviewSectionViewModel.m */,
-				CB6B9B441E77B042004C998D /* SSJStaticTableviewCell.h */,
-				CB6B9B451E77B042004C998D /* SSJStaticTableviewCell.m */,
-				CB6B9B471E77BAF6004C998D /* SSJMeViewController.h */,
-				CB6B9B481E77BAF6004C998D /* SSJMeViewController.m */,
 				CB6B9B4B1E77C9D0004C998D /* SSJConst.h */,
-				CB6B9B4C1E77E608004C998D /* SSJSettingViewController.h */,
-				CB6B9B4D1E77E608004C998D /* SSJSettingViewController.m */,
+				CB67ED621E79353F00943425 /* ViewController */,
+				CB67EDA31E7938D900943425 /* ViewModel */,
+				CB67ED631E79354C00943425 /* View */,
+				CB67ED611E79353400943425 /* Model */,
 				CB6B9B4F1E77E81B004C998D /* SSJStaticTavleviewDataSource.h */,
 				CB6B9B501E77E81B004C998D /* SSJStaticTavleviewDataSource.m */,
-				CB6B9B521E780768004C998D /* SSJStaticMeAvatarTableViewCell.h */,
-				CB6B9B531E780768004C998D /* SSJStaticMeAvatarTableViewCell.m */,
-				CB6B9B5B1E7811B6004C998D /* avatar@2x.png */,
-				CB6B9B571E780971004C998D /* code@2x.png */,
+				CB67ED601E79351600943425 /* Resource */,
+				CB6B9B0B1E77AD4B004C998D /* Supporting Files */,
 			);
 			path = SSJStaticTableViewDemo;
 			sourceTree = "<group>";
@@ -155,6 +219,12 @@
 		CB6B9B0B1E77AD4B004C998D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CB6B9B0E1E77AD4B004C998D /* AppDelegate.h */,
+				CB6B9B0F1E77AD4B004C998D /* AppDelegate.m */,
+				CB6B9B141E77AD4B004C998D /* Main.storyboard */,
+				CB6B9B171E77AD4B004C998D /* Assets.xcassets */,
+				CB6B9B191E77AD4B004C998D /* LaunchScreen.storyboard */,
+				CB6B9B1C1E77AD4B004C998D /* Info.plist */,
 				CB6B9B0C1E77AD4B004C998D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -313,14 +383,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6B9B621E78E6BB004C998D /* Factory.m in Sources */,
+				CB67EDB21E795B3700943425 /* SJStaticTableViewController.m in Sources */,
 				CB6B9B4E1E77E608004C998D /* SSJSettingViewController.m in Sources */,
+				CB67EDA91E79405E00943425 /* SJStaticTableView.m in Sources */,
 				CB6B9B431E77B01B004C998D /* SSJStaticTableviewSectionViewModel.m in Sources */,
-				CB6B9B541E780768004C998D /* SSJStaticMeAvatarTableViewCell.m in Sources */,
 				CB6B9B401E77AFFD004C998D /* SSJStaticTableviewCellViewModel.m in Sources */,
+				CB6B9B6F1E78EB98004C998D /* SJStaticTableViewCell.m in Sources */,
 				CB6B9B511E77E81B004C998D /* SSJStaticTavleviewDataSource.m in Sources */,
+				CB67ED5C1E792E9900943425 /* SJStaticTableViewCell+MeAvatar.m in Sources */,
+				CB67EDB51E795B8400943425 /* SJMeViewController.m in Sources */,
 				CB6B9B491E77BAF6004C998D /* SSJMeViewController.m in Sources */,
+				CB67ED5F1E79309500943425 /* SJStaticTableViewCell+AccessoryDisclosureIndicator.m in Sources */,
+				CB67EDAC1E79409700943425 /* SJStaticTableViewDataSource.m in Sources */,
 				CB6B9B101E77AD4B004C998D /* AppDelegate.m in Sources */,
-				CB6B9B461E77B042004C998D /* SSJStaticTableviewCell.m in Sources */,
 				CB6B9B0D1E77AD4B004C998D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +627,7 @@
 				CB6B9B371E77AD4B004C998D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB6B9B381E77AD4B004C998D /* Build configuration list for PBXNativeTarget "SSJStaticTableViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +636,7 @@
 				CB6B9B3A1E77AD4B004C998D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB6B9B3B1E77AD4B004C998D /* Build configuration list for PBXNativeTarget "SSJStaticTableViewDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -567,6 +645,7 @@
 				CB6B9B3D1E77AD4B004C998D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

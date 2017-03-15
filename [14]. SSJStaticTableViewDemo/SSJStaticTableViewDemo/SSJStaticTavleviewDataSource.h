@@ -9,16 +9,24 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class SSJStaticTableviewCellViewModel;
+@class SJStaticTableViewCell;
 
-@protocol SSJStaticTavleviewDataSource <UITableViewDataSource>
+//@class SSJStaticTableviewCellViewModel;
+//
+//@protocol SSJStaticTavleviewDataSource <UITableViewDataSource>
+//
+//@optional
+//
+//- (SSJStaticTableviewCellViewModel *)viewModelForRowAtIndexPath:(NSIndexPath *)indexPath;
+//
+//@end
 
-@optional
-
-- (SSJStaticTableviewCellViewModel *)viewModelForRowAtIndexPath:(NSIndexPath *)indexPath;
-
-@end
+typedef void(^SJStaticCellConfigureBlock)(SJStaticTableViewCell *cell, id viewModel);
 
 @interface SSJStaticTavleviewDataSource : NSObject<UITableViewDataSource>
+
+@property (nonatomic, strong) NSArray *viewModelsArray;
+
+- (instancetype)initWithViewModelsArray:(NSArray *)viewModelsArray configureBlock:(SJStaticCellConfigureBlock)block;
 
 @end

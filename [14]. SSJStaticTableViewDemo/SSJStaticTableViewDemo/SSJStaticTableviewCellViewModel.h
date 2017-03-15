@@ -12,7 +12,7 @@
 
 typedef NS_ENUM(NSInteger, SSJStaticCellType) {
     
-    SSJStaticCellTypeAvatar,
+    SSJStaticCellTypeMeAvatar,
     SSJStaticCellTypeSystemLogout,
     SSJStaticCellTypeSystemAccessoryNone,
     SSJStaticCellTypeSystemAccessorySwitch,
