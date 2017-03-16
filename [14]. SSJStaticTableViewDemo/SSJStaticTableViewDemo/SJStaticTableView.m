@@ -29,6 +29,13 @@
     return self;
 }
 
+- (void)setSjDataSource:(id<SJStaticTableViewDataSource>)sjDataSource
+{
+    if (_sjDataSource != sjDataSource) {
+        _sjDataSource = sjDataSource;
+        self.dataSource = _sjDataSource;
+    }
+}
 
 #pragma mark - Tableview Delegate
 
@@ -51,14 +58,21 @@
     return sectionViewModel.sectionFooterHeight;
 }
 
-//
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    SSJStaticTableviewSectionViewModel *sectionViewModel = self.sjDataSource.viewModelsArray[indexPath.section];
-//    SSJStaticTableviewCellViewModel *cellViewModel = sectionViewModel.itemArray[indexPath.row];
-//    
-//}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if ((self.sjDelegate) && [self.sjDelegate respondsToSelector:@selector(didSelectViewModel:atIndexPath:)]) {
+        
+        SSJStaticTableviewCellViewModel *cellViewModel = [self.sjDataSource tableView:tableView cellViewModelAtIndexPath:indexPath];
+        [self.sjDelegate didSelectViewModel:cellViewModel atIndexPath:indexPath];
+        
+    }else if((self.sjDelegate)&& [self.sjDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]){
+        
+        [self.sjDelegate tableView:tableView didSelectRowAtIndexPath:indexPath];
+        
+    }
+}
 
 
 @end

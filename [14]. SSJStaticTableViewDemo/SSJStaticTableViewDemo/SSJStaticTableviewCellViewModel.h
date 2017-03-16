@@ -12,18 +12,17 @@
 
 typedef NS_ENUM(NSInteger, SSJStaticCellType) {
     
-    SSJStaticCellTypeMeAvatar,
-    SSJStaticCellTypeSystemLogout,
-    SSJStaticCellTypeSystemAccessoryNone,
-    SSJStaticCellTypeSystemAccessorySwitch,
-    SSJStaticCellTypeSystemAccessoryDisclosureIndicator,
+    SSJStaticCellTypeSystemAccessoryNone,                   //右侧没有任何控件
+    SSJStaticCellTypeSystemAccessorySwitch,                 //右侧是开关
+    SSJStaticCellTypeSystemAccessoryDisclosureIndicator,    //右侧是三角箭头
+    
+    SSJStaticCellTypeMeAvatar,                              //个人页“我”cell
+    SSJStaticCellTypeSystemLogout,                          //退出cell
     
 };
 
 typedef void(^SSJStaticCellDidTap)();
 typedef void(^SSJStaticCellSwitchChanged)(BOOL isOn);
-
-
 
 
 
@@ -33,7 +32,10 @@ typedef void(^SSJStaticCellSwitchChanged)(BOOL isOn);
 @property (nonatomic, assign) SSJStaticCellType staticCellType;
 
 
-@property (nonatomic, copy, readwrite)   NSString *cellID;     //cell主标题
+@property (nonatomic, copy, readwrite)   NSString *cellID;     //cell reuser identifier
+
+@property (nonatomic, assign) NSInteger identifier;            //区别每个cell
+
 //系统默认cell的控件数据
 @property (nonatomic, strong, readwrite) UIImage  *defaultImage;     //最左侧的image
 @property (nonatomic, copy, readwrite)   NSString *defaultTitle;     //cell主标题

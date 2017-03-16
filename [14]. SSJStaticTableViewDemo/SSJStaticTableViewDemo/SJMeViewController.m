@@ -16,6 +16,7 @@
 
 @implementation SJMeViewController
 
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -42,6 +43,11 @@
                 break;
         }
     }];
+}
+
+- (void)didSelectViewModel:(SSJStaticTableviewCellViewModel *)viewModel atIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 @end

@@ -21,10 +21,10 @@
 - (instancetype)init
 {
     self = [super init];
-    if (self) {
+    if (self) {        
         _cellHeight = 44;
         _cellID = @"defaultCell";
-        
+        _staticCellType = SSJStaticCellTypeSystemAccessoryDisclosureIndicator;//默认是三角箭头
     }
     return self;
 }

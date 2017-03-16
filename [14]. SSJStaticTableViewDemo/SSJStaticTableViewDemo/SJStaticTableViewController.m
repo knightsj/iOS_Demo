@@ -11,6 +11,15 @@
 
 @implementation SJStaticTableViewController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -27,9 +36,9 @@
 - (void)createTableView {
     
     if (!self.tableView) {
-        self.tableView = [[SJStaticTableView alloc] initWithFrame:self.view.bounds];
-        self.tableView.sjDelegate = self;
-        self.tableView.sjDataSource = self.dataSource;
+         self.tableView = [[SJStaticTableView alloc] initWithFrame:self.view.bounds];
+         self.tableView.sjDelegate = self;
+         self.tableView.sjDataSource = self.dataSource;
         [self.view addSubview:self.tableView];
     }
 }
