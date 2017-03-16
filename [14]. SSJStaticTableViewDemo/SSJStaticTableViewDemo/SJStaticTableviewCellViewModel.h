@@ -12,18 +12,16 @@
 
 typedef NS_ENUM(NSInteger, SSJStaticCellType) {
     
+    //已封装好，可以直接用
+    SSJStaticCellTypeSystemLogout,                          //退出登录cell（已封装好）
     SSJStaticCellTypeSystemAccessoryNone,                   //右侧没有任何控件
     SSJStaticCellTypeSystemAccessorySwitch,                 //右侧是开关
-    SSJStaticCellTypeSystemAccessoryDisclosureIndicator,    //右侧是三角箭头
+    SSJStaticCellTypeSystemAccessoryDisclosureIndicator,    //右侧是三角箭头(箭头左侧可以有一个image或者一个label，或者二者都有，根据传入的参数决定)
     
+    //需要用户自己添加的自定义cell
     SSJStaticCellTypeMeAvatar,                              //个人页“我”cell
-    SSJStaticCellTypeSystemLogout,                          //退出cell
     
 };
-
-typedef void(^SSJStaticCellDidTap)();
-typedef void(^SSJStaticCellSwitchChanged)(BOOL isOn);
-
 
 
 @interface SJStaticTableviewCellViewModel : NSObject
@@ -34,7 +32,7 @@ typedef void(^SSJStaticCellSwitchChanged)(BOOL isOn);
 
 @property (nonatomic, copy, readwrite)   NSString *cellID;     //cell reuser identifier
 
-@property (nonatomic, assign) NSInteger identifier;            //区别每个cell
+@property (nonatomic, assign, readwrite) NSInteger identifier;            //区别每个cell
 
 //系统默认cell的控件数据
 @property (nonatomic, strong, readwrite) UIImage  *defaultImage;     //最左侧的image
@@ -44,17 +42,18 @@ typedef void(^SSJStaticCellSwitchChanged)(BOOL isOn);
 
 //系统默认cell的控件以外的控件或者数据
 @property (nonatomic, copy, readwrite)   NSString *indicatorLeftTitle; //右侧箭头左侧的文本
-@property (nonatomic, strong, readwrite) UIImage *indicatorLeftImage; //右侧箭头左侧的image
-@property (nonatomic, strong, readwrite) UIView *indicatorCustomView; //右侧尖头左侧的自定义view
+@property (nonatomic, strong, readwrite) UIImage *indicatorLeftImage;  //右侧箭头左侧的image
+@property (nonatomic, assign, readwrite) BOOL hasIndicatorImageAndLabel;  //右侧尖头左侧的文本和image是否同时存在
+@property (nonatomic, assign, readwrite) BOOL isImageFirst;            //右侧尖头左侧的文本和image同时存在时，是否是image挨着箭头，默认是
+
 
 //长宽数据
 @property (nonatomic, assign, readwrite) CGFloat cellHeight;
-@property (nonatomic, assign, readwrite) CGFloat imgHeight;
+@property (nonatomic, assign, readwrite) CGFloat indicatorLeftImgWidth;
+@property (nonatomic, assign, readwrite) CGFloat indicatorLeftImgHeight;
 @property (nonatomic, assign, readwrite) CGSize  defatultTitleLabelSize;
 @property (nonatomic, assign, readwrite) CGSize  indicatorLeftTitleLabelSize;
 
-@property (nonatomic, copy) SSJStaticCellDidTap cellDidTapBlock;
-@property (nonatomic, copy) SSJStaticCellSwitchChanged switchChangedBlock;
 
 
 //自定义cell的数据放在这里

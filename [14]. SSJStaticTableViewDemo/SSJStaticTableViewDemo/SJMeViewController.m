@@ -7,8 +7,9 @@
 //
 
 #import "SJMeViewController.h"
-#import "SJStaticTableViewCell+AccessoryDisclosureIndicator.h"
 #import "SJStaticTableViewCell+MeAvatar.h"
+#import "SJSettingViewController.h"
+#import "SJInfoViewController.h"
 
 @interface SJMeViewController ()
 
@@ -28,13 +29,15 @@
     self.dataSource = [[SJStaticTableViewDataSource alloc] initWithViewModelsArray:[Factory mePageData] configureBlock:^(SJStaticTableViewCell *cell, SJStaticTableviewCellViewModel *viewModel) {
         
         switch (viewModel.staticCellType) {
+                
             case SSJStaticCellTypeSystemAccessoryDisclosureIndicator:
             {
                 [cell configureAccessoryDisclosureIndicatorCellWithViewModel:viewModel];
             }
                 break;
                 
-            case SSJStaticCellTypeMeAvatar:{
+            case SSJStaticCellTypeMeAvatar:
+            {
                 [cell configureMeAvatarTableViewCellWithViewModel:viewModel];
             }
                 break;
@@ -48,6 +51,28 @@
 - (void)didSelectViewModel:(SJStaticTableviewCellViewModel *)viewModel atIndexPath:(NSIndexPath *)indexPath
 {
     
+    switch (viewModel.identifier)
+    {
+        case 0:
+        {
+            NSLog(@"跳转到详情页");
+            SJInfoViewController *vc = [[SJInfoViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+            
+        case 7:
+        {
+            NSLog(@"跳转到设置页");
+            SJSettingViewController *vc = [[SJSettingViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+            
+        
+        default:
+            break;
+    }
 }
 
 @end

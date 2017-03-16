@@ -14,13 +14,19 @@
 #define SSJScreenHeight     [UIScreen mainScreen].bounds.size.height
 #define SSJScreenBounds     [UIScreen mainScreen].bounds
 
+#define SJTopGap 8    //same as bottom gap
+#define SJLeftGap 14   //same as right gap
 #define SSJImgToLeftGap 14
 #define SSJImgWidth 30
 #define SSJTitleLimit 100
 
+//image
+#define SJIndicatorArrow @"arrow"
+
 
 //font
 #define SSJDefaultTitleFont [UIFont systemFontOfSize:14]
+#define SSJLogoutButtonFont [UIFont systemFontOfSize:16]
 #define SSJIndicatorLeftTitleFont [UIFont systemFontOfSize:12]
 
 //color

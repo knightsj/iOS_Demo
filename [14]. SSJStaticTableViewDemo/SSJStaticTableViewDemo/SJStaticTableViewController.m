@@ -36,7 +36,7 @@
 - (void)createTableView {
     
     if (!self.tableView) {
-         self.tableView = [[SJStaticTableView alloc] initWithFrame:self.view.bounds];
+         self.tableView = [[SJStaticTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
          self.tableView.sjDelegate = self;
          self.tableView.sjDataSource = self.dataSource;
         [self.view addSubview:self.tableView];

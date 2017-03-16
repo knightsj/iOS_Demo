@@ -13,9 +13,8 @@
 
 @implementation SJStaticTableView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    
-    self = [super initWithFrame:frame];
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
+    self = [super initWithFrame:frame style:style];
     if (self) {
         self.autoresizingMask =  UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.showsVerticalScrollIndicator = NO;
@@ -23,7 +22,6 @@
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.backgroundColor = SSJColorWithRGB(240, 239, 245, 1);
         self.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
-        self.scrollEnabled = NO;
         self.delegate = self;
     }
     return self;

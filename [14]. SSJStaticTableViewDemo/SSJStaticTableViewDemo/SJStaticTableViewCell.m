@@ -11,12 +11,12 @@
 @implementation SJStaticTableViewCell
 
 
-#pragma mark- setters && getters
+#pragma mark- default cell
 - (UIImageView *)leftImageView
 {
     if (!_leftImageView) {
         _leftImageView = [[UIImageView alloc] initWithImage:_viewModel.defaultImage];
-        _leftImageView.frame = CGRectMake(SSJImgToLeftGap, (_viewModel.cellHeight - SSJImgWidth)/2, SSJImgWidth , SSJImgWidth);
+        _leftImageView.frame = CGRectMake(SJLeftGap, (_viewModel.cellHeight - SSJImgWidth)/2, SSJImgWidth , SSJImgWidth);
     }
     return _leftImageView;
 }
@@ -28,7 +28,7 @@
         _leftTitleLabel.font = SSJDefaultTitleFont;
         _leftTitleLabel.textColor = SSJDefaultTitleColor;
         _leftTitleLabel.text = _viewModel.defaultTitle;
-        _leftTitleLabel.frame = CGRectMake( CGRectGetMaxX(self.leftImageView.frame) + SSJImgToLeftGap,  (_viewModel.cellHeight - _viewModel.defatultTitleLabelSize.height)/2, _viewModel.defatultTitleLabelSize.width, _viewModel.defatultTitleLabelSize.height);
+        _leftTitleLabel.frame = CGRectMake( CGRectGetMaxX(_leftImageView.frame) + SSJImgToLeftGap,  (_viewModel.cellHeight - _viewModel.defatultTitleLabelSize.height)/2, _viewModel.defatultTitleLabelSize.width, _viewModel.defatultTitleLabelSize.height);
     }
     return _leftTitleLabel;
 }
@@ -38,7 +38,7 @@
 {
     if (!_indicatorSwitch) {
         _indicatorSwitch = [[UISwitch alloc] init];
-        _indicatorSwitch.frame = CGRectMake(SSJScreenWidth - SSJImgToLeftGap - _indicatorSwitch.bounds.size.width, (_viewModel.cellHeight -  _indicatorSwitch.bounds.size.height)/2, _indicatorSwitch.bounds.size.width, _indicatorSwitch.bounds.size.height);
+        _indicatorSwitch.frame = CGRectMake(SSJScreenWidth - SJLeftGap - _indicatorSwitch.bounds.size.width, (_viewModel.cellHeight -  _indicatorSwitch.bounds.size.height)/2, _indicatorSwitch.bounds.size.width, _indicatorSwitch.bounds.size.height);
         [_indicatorSwitch addTarget:self action:@selector(switchTouched:) forControlEvents:UIControlEventValueChanged];
         
     }
@@ -48,7 +48,7 @@
 - (UIImageView *)indicatorArrow
 {
     if (!_indicatorArrow) {
-        _indicatorArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
+        _indicatorArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:SJIndicatorArrow]];
         _indicatorArrow.frame = CGRectMake(SSJScreenWidth - SSJImgToLeftGap - _indicatorArrow.bounds.size.width, (_viewModel.cellHeight - _indicatorArrow.bounds.size.height)/2, _indicatorArrow.bounds.size.width, _indicatorArrow.bounds.size.height);
     }
     
@@ -62,7 +62,21 @@
         _indicatorLeftLabel.font = SSJIndicatorLeftTitleFont;
         _indicatorLeftLabel.textColor = SSJIndicatorLeftTitleColor;
         _indicatorLeftLabel.text = _viewModel.indicatorLeftTitle;
-        _indicatorLeftLabel.frame = CGRectMake(self.indicatorArrow.frame.origin.x - SSJImgToLeftGap - _viewModel.indicatorLeftTitleLabelSize.width  , (_viewModel.cellHeight - _viewModel.indicatorLeftTitleLabelSize.height)/2, _viewModel.indicatorLeftTitleLabelSize.width, _viewModel.indicatorLeftTitleLabelSize.height);
+        
+        if (!_viewModel.hasIndicatorImageAndLabel) {
+            _indicatorLeftLabel.frame = CGRectMake(_indicatorArrow.frame.origin.x - SSJImgToLeftGap - _viewModel.indicatorLeftTitleLabelSize.width  , (_viewModel.cellHeight - _viewModel.indicatorLeftTitleLabelSize.height)/2, _viewModel.indicatorLeftTitleLabelSize.width, _viewModel.indicatorLeftTitleLabelSize.height);
+        }else{
+            //同时存在
+            if (_viewModel.isImageFirst) {
+                
+                _indicatorLeftLabel.frame = CGRectMake(SSJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - SJLeftGap - _viewModel.indicatorLeftImgWidth - SJLeftGap - _viewModel.indicatorLeftTitleLabelSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftTitleLabelSize.height)/2, _viewModel.indicatorLeftTitleLabelSize.width, _viewModel.indicatorLeftTitleLabelSize.height);
+                
+            }else{
+                
+                _indicatorLeftLabel.frame = CGRectMake(SSJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - SJLeftGap - _viewModel.indicatorLeftTitleLabelSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftTitleLabelSize.height)/2, _viewModel.indicatorLeftTitleLabelSize.width, _viewModel.indicatorLeftTitleLabelSize.height);
+            }
+        }
+        
     }
     return _indicatorLeftLabel;
 }
@@ -71,12 +85,43 @@
 {
     if (!_indicatorImageView) {
         _indicatorImageView = [[UIImageView alloc] initWithImage:_viewModel.indicatorLeftImage];
-        _indicatorImageView.frame = CGRectMake(self.indicatorArrow.frame.origin.x - SSJImgToLeftGap - SSJImgWidth, (_viewModel.cellHeight - SSJImgWidth)/2, _viewModel.indicatorLeftImage.size.width , SSJImgWidth);
+        
+        if (!_viewModel.hasIndicatorImageAndLabel) {
+            _indicatorImageView.frame = CGRectMake(_indicatorArrow.frame.origin.x - SSJImgToLeftGap - _viewModel.indicatorLeftImgWidth, (_viewModel.cellHeight - _viewModel.indicatorLeftImgHeight)/2, _viewModel.indicatorLeftImgWidth , _viewModel.indicatorLeftImgHeight);
+        }else{
+            
+            if (_viewModel.isImageFirst) {
+                
+                _indicatorImageView.frame = CGRectMake(SSJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - SJLeftGap - _viewModel.indicatorLeftImgWidth, (_viewModel.cellHeight - _viewModel.indicatorLeftImgHeight)/2, _viewModel.indicatorLeftImgWidth, _viewModel.indicatorLeftImgHeight);
+                
+            }else{
+                
+                _indicatorImageView.frame = CGRectMake(SSJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - SJLeftGap - _viewModel.indicatorLeftTitleLabelSize.width - SJLeftGap - _viewModel.indicatorLeftImgWidth, (_viewModel.cellHeight - _viewModel.indicatorLeftImgHeight)/2, _viewModel.indicatorLeftImgWidth,_viewModel.indicatorLeftImgHeight);
+                
+            }
+
+        }
+        
     }
     return _indicatorImageView;
 }
 
+#pragma mark - logout cell
+- (UILabel *)logoutLabel
+{
+    if (!_logoutLabel) {
+         _logoutLabel = [[UILabel alloc] init];
+         _logoutLabel.frame = CGRectMake(0, 0, SSJScreenWidth, _viewModel.cellHeight);
+         _logoutLabel.text = @"退出登录";
+         _logoutLabel.textAlignment = NSTextAlignmentCenter;
+         _logoutLabel.textColor = [UIColor blackColor];
+         _logoutLabel.font = SSJLogoutButtonFont;
+    }
+    return _logoutLabel;
+}
 
+//自定义
+#pragma mark- custom mePage cell
 - (UIImageView *)avatarImageView
 {
     if (!_avatarImageView) {
@@ -94,7 +139,7 @@
         _userNameLabel.text = self.viewModel.userName;
         _userNameLabel.font = [UIFont systemFontOfSize:13];
         _userNameLabel.textColor = [UIColor blackColor];
-        _userNameLabel.frame = CGRectMake(CGRectGetMaxX(self.avatarImageView.frame) + SSJImgToLeftGap, self.avatarImageView.frame.origin.y + SSJImgToLeftGap/2, 150, 20);
+        _userNameLabel.frame = CGRectMake(CGRectGetMaxX(_avatarImageView.frame) + SSJImgToLeftGap, self.avatarImageView.frame.origin.y + SSJImgToLeftGap/2, 150, 20);
         
     }
     return _userNameLabel;
@@ -108,18 +153,9 @@
         _userIdLabel.text = self.viewModel.userID;
         _userIdLabel.font = [UIFont systemFontOfSize:12];
         _userIdLabel.textColor = [UIColor blackColor];
-        _userIdLabel.frame = CGRectMake(self.userNameLabel.frame.origin.x, CGRectGetMaxY(self.userNameLabel.frame) + 4, 150, 20);
+        _userIdLabel.frame = CGRectMake(CGRectGetMaxX(_avatarImageView.frame) + SSJImgToLeftGap, CGRectGetMaxY(self.userNameLabel.frame) + 4, 150, 20);
     }
     return _userIdLabel;
-}
-
-- (UIImageView *)codeImageView
-{
-    if (!_codeImageView) {
-        _codeImageView = [[UIImageView alloc] initWithImage:self.viewModel.codeImage];
-        _codeImageView.frame = CGRectMake(self.indicatorArrow.frame.origin.x - SSJImgToLeftGap - 20, (self.viewModel.cellHeight - 20)/2, 20, 20);
-    }
-    return _codeImageView;
 }
 
 - (UIImageView *)avatarIndicatorImageView
@@ -131,5 +167,16 @@
     
     return _avatarIndicatorImageView;
 }
+
+- (UIImageView *)codeImageView
+{
+    if (!_codeImageView) {
+        _codeImageView = [[UIImageView alloc] initWithImage:self.viewModel.codeImage];
+        _codeImageView.frame = CGRectMake(SSJScreenWidth - SJLeftGap - _avatarIndicatorImageView.bounds.size.width - SJLeftGap - 20, (self.viewModel.cellHeight - 20)/2, 20, 20);
+    }
+    return _codeImageView;
+}
+
+
 
 @end

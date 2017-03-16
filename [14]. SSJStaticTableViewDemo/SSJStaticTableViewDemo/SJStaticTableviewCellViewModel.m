@@ -25,14 +25,17 @@
         _cellHeight = 44;
         _cellID = @"defaultCell";
         _staticCellType = SSJStaticCellTypeSystemAccessoryDisclosureIndicator;//默认是三角箭头
+        _isImageFirst = YES;
     }
     return self;
 }
 
 - (void)setDefaultImage:(UIImage *)defaultImage
 {
+    //最左侧的图片永远是固定大小
     _defaultImage = defaultImage;
-    _imgHeight = SSJImgWidth;
+    _indicatorLeftImgWidth = SSJImgWidth;
+    _indicatorLeftImgHeight = SSJImgWidth;
 }
 
 - (void)setDefaultTitle:(NSString *)defaultTitle
@@ -40,7 +43,7 @@
     _defaultTitle = defaultTitle;
     _defatultTitleLabelSize = [self sizeForTitle:defaultTitle withFont:SSJDefaultTitleFont];
     
-    //long title
+    //very long title
     if (_defatultTitleLabelSize.width > SSJTitleLimit) {
         CGSize size = _defatultTitleLabelSize;
         size.width = SSJTitleLimit;
@@ -53,18 +56,36 @@
     _indicatorLeftTitle = indicatorLeftTitle;
     _indicatorLeftTitleLabelSize = [self sizeForTitle:_indicatorLeftTitle withFont:SSJIndicatorLeftTitleFont];
     
-    //long title
+    //very long title
     if (_indicatorLeftTitleLabelSize.width > SSJTitleLimit) {
         CGSize size = _indicatorLeftTitleLabelSize;
         size.width = SSJTitleLimit;
         _indicatorLeftTitleLabelSize = size;
+    }
+    
+    if (_indicatorLeftImage) {
+        _hasIndicatorImageAndLabel = YES;
     }
 }
 
 - (void)setIndicatorLeftImage:(UIImage *)indicatorLeftImage
 {
     _indicatorLeftImage = indicatorLeftImage;
-    _imgHeight = SSJImgWidth;
+    
+    CGFloat limitHeight = self.cellHeight - 2*SJTopGap;
+        
+    if (_indicatorLeftImage.size.height < limitHeight) {
+        _indicatorLeftImgHeight = _indicatorLeftImage.size.height;
+        _indicatorLeftImgWidth = _indicatorLeftImage.size.width;
+    }else{
+        //very high image
+        _indicatorLeftImgHeight = limitHeight;
+        _indicatorLeftImgWidth = (_indicatorLeftImage.size.width / _indicatorLeftImage.size.height) * _indicatorLeftImgHeight ;
+    }
+    
+    if (_indicatorLeftTitle) {
+        _hasIndicatorImageAndLabel = YES;
+    }
 }
 
 

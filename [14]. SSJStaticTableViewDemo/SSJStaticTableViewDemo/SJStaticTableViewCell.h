@@ -30,4 +30,7 @@
 @property (nonatomic, strong) UIImageView *codeImageView;
 @property (nonatomic, strong) UIImageView *avatarIndicatorImageView;
 
+//退出登录的按钮
+@property (nonatomic, strong) UILabel *logoutLabel;
+
 @end

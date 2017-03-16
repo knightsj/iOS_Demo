@@ -12,5 +12,7 @@
 
 
 + (NSArray *)mePageData;
++ (NSArray *)settingPageData;
++ (NSArray *)infoPageData;
 
 @end

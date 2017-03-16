@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        _sectionHeaderHeight = 20;
+        _sectionHeaderHeight = 0;
         _sectionFooterHeight = 0;
     }
     return self;
