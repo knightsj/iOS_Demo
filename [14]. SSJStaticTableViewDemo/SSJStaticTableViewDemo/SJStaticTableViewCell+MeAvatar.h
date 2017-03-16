@@ -10,6 +10,6 @@
 
 @interface SJStaticTableViewCell (MeAvatar)
 
-- (void)configureMeAvatarTableViewCellWithViewModel:(SSJStaticTableviewCellViewModel *)viewModel;
+- (void)configureMeAvatarTableViewCellWithViewModel:(SJStaticTableviewCellViewModel *)viewModel;
 
 @end

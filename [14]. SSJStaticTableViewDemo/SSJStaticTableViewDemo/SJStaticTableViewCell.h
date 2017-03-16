@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SSJStaticTableviewCellViewModel.h"
+#import "SJStaticTableviewCellViewModel.h"
 
 @interface SJStaticTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) SSJStaticTableviewCellViewModel *viewModel;
+@property (nonatomic, strong) SJStaticTableviewCellViewModel *viewModel;
 
 //我页面普通cell
 @property (nonatomic, strong) UIImageView *leftImageView;

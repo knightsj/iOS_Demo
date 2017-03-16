@@ -1,14 +1,14 @@
 //
-//  SSJStaticTableviewSectionViewModel.m
+//  SJStaticTableviewSectionViewModel.m
 //  SSJStaticTableViewDemo
 //
 //  Created by Sun Shijie on 2017/3/14.
 //  Copyright © 2017年 Shijie. All rights reserved.
 //
 
-#import "SSJStaticTableviewSectionViewModel.h"
+#import "SJStaticTableviewSectionViewModel.h"
 
-@implementation SSJStaticTableviewSectionViewModel
+@implementation SJStaticTableviewSectionViewModel
 
 - (instancetype)init
 {

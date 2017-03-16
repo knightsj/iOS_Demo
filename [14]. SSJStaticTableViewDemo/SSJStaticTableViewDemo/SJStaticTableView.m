@@ -7,8 +7,8 @@
 //
 
 #import "SJStaticTableView.h"
-#import "SSJStaticTableviewCellViewModel.h"
-#import "SSJStaticTableviewSectionViewModel.h"
+#import "SJStaticTableviewCellViewModel.h"
+#import "SJStaticTableviewSectionViewModel.h"
 #import "SJStaticTableViewCell.h"
 
 @implementation SJStaticTableView
@@ -41,20 +41,20 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SSJStaticTableviewCellViewModel *cellViewModel = [self.sjDataSource tableView:tableView cellViewModelAtIndexPath:indexPath];
+    SJStaticTableviewCellViewModel *cellViewModel = [self.sjDataSource tableView:tableView cellViewModelAtIndexPath:indexPath];
     return cellViewModel.cellHeight;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    SSJStaticTableviewSectionViewModel *sectionViewModel = [self.sjDataSource tableView:tableView sectionViewModelInSection:section];
+    SJStaticTableviewSectionViewModel *sectionViewModel = [self.sjDataSource tableView:tableView sectionViewModelInSection:section];
     return sectionViewModel.sectionHeaderHeight;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    SSJStaticTableviewSectionViewModel *sectionViewModel = [self.sjDataSource tableView:tableView sectionViewModelInSection:section];
+    SJStaticTableviewSectionViewModel *sectionViewModel = [self.sjDataSource tableView:tableView sectionViewModelInSection:section];
     return sectionViewModel.sectionFooterHeight;
 }
 
@@ -64,7 +64,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if ((self.sjDelegate) && [self.sjDelegate respondsToSelector:@selector(didSelectViewModel:atIndexPath:)]) {
         
-        SSJStaticTableviewCellViewModel *cellViewModel = [self.sjDataSource tableView:tableView cellViewModelAtIndexPath:indexPath];
+        SJStaticTableviewCellViewModel *cellViewModel = [self.sjDataSource tableView:tableView cellViewModelAtIndexPath:indexPath];
         [self.sjDelegate didSelectViewModel:cellViewModel atIndexPath:indexPath];
         
     }else if((self.sjDelegate)&& [self.sjDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]){

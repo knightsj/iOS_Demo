@@ -15,7 +15,7 @@
 
 @optional
 
-- (void)didSelectViewModel: (SSJStaticTableviewCellViewModel *)viewModel atIndexPath:(NSIndexPath *)indexPath;
+- (void)didSelectViewModel: (SJStaticTableviewCellViewModel *)viewModel atIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

@@ -1,5 +1,5 @@
 //
-//  SSJStaticTableviewSectionViewModel.h
+//  SJStaticTableviewSectionViewModel.h
 //  SSJStaticTableViewDemo
 //
 //  Created by Sun Shijie on 2017/3/14.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface SSJStaticTableviewSectionViewModel : NSObject
+@interface SJStaticTableviewSectionViewModel : NSObject
 
 @property (nonatomic,copy)   NSString *sectionHeaderTitle;       //该section的标题
 @property (nonatomic,copy)   NSString *sectionFooterTitle;       //该section的标题
@@ -17,7 +17,6 @@
 
 @property (nonatomic,assign) CGFloat  sectionHeaderHeight;  //header的高度
 @property (nonatomic,assign) CGFloat  sectionFooterHeight;  //footer的高度
-
 
 
 @end

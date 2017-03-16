@@ -7,8 +7,8 @@
 //
 
 #import "Factory.h"
-#import "SSJStaticTableviewCellViewModel.h"
-#import "SSJStaticTableviewSectionViewModel.h"
+#import "SJStaticTableviewCellViewModel.h"
+#import "SJStaticTableviewSectionViewModel.h"
 
 
 
@@ -17,7 +17,7 @@
 + (NSArray *)mePageData
 {
     // ========== section 0
-    SSJStaticTableviewCellViewModel *vm0 = [[SSJStaticTableviewCellViewModel alloc] init];
+    SJStaticTableviewCellViewModel *vm0 = [[SJStaticTableviewCellViewModel alloc] init];
     vm0.cellID = @"avatarCell";
     vm0.cellHeight = 80;
     vm0.avatarImage = [UIImage imageNamed:@"avatar"];
@@ -25,50 +25,50 @@
     vm0.userID = @"微信号：xxxxxx";
     vm0.staticCellType = SSJStaticCellTypeMeAvatar;
     
-    SSJStaticTableviewSectionViewModel *section0 = [[SSJStaticTableviewSectionViewModel alloc] init];
+    SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] init];
     section0.itemArray = @[vm0];
     
     
     
     // ========== section 1
-    SSJStaticTableviewCellViewModel *vm1 = [[SSJStaticTableviewCellViewModel alloc] init];
+    SJStaticTableviewCellViewModel *vm1 = [[SJStaticTableviewCellViewModel alloc] init];
     vm1.defaultImage = [UIImage imageNamed:@"favorites"];
     vm1.defaultTitle = @"相册";
     
-    SSJStaticTableviewCellViewModel *vm2 = [[SSJStaticTableviewCellViewModel alloc] init];
+    SJStaticTableviewCellViewModel *vm2 = [[SJStaticTableviewCellViewModel alloc] init];
     vm2.defaultImage = [UIImage imageNamed:@"favorites"];
     vm2.defaultTitle = @"收藏";
     
     
-    SSJStaticTableviewCellViewModel *vm3 = [[SSJStaticTableviewCellViewModel alloc] init];
+    SJStaticTableviewCellViewModel *vm3 = [[SJStaticTableviewCellViewModel alloc] init];
     vm3.defaultImage = [UIImage imageNamed:@"favorites"];
     vm3.defaultTitle = @"钱包";
 
     
-    SSJStaticTableviewCellViewModel *vm4 = [[SSJStaticTableviewCellViewModel alloc] init];
+    SJStaticTableviewCellViewModel *vm4 = [[SJStaticTableviewCellViewModel alloc] init];
     vm4.defaultImage = [UIImage imageNamed:@"favorites"];
     vm4.defaultTitle = @"卡包";
   
     
-    SSJStaticTableviewSectionViewModel *section1 = [[SSJStaticTableviewSectionViewModel alloc] init];
+    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] init];
     section1.itemArray = @[vm1,vm2,vm3,vm4];
     
     // ========== section 2
-    SSJStaticTableviewCellViewModel *vm5 = [[SSJStaticTableviewCellViewModel alloc] init];
+    SJStaticTableviewCellViewModel *vm5 = [[SJStaticTableviewCellViewModel alloc] init];
     vm5.defaultImage = [UIImage imageNamed:@"favorites"];
     vm5.defaultTitle = @"表情";
     
     
-    SSJStaticTableviewSectionViewModel *section2 = [[SSJStaticTableviewSectionViewModel alloc] init];
+    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] init];
     section2.itemArray = @[vm5];
     
     // ========== section 3
-    SSJStaticTableviewCellViewModel *vm6 = [[SSJStaticTableviewCellViewModel alloc] init];
+    SJStaticTableviewCellViewModel *vm6 = [[SJStaticTableviewCellViewModel alloc] init];
     vm6.defaultImage = [UIImage imageNamed:@"favorites"];
     vm6.defaultTitle = @"设置";
     
     
-    SSJStaticTableviewSectionViewModel *section3 = [[SSJStaticTableviewSectionViewModel alloc] init];
+    SJStaticTableviewSectionViewModel *section3 = [[SJStaticTableviewSectionViewModel alloc] init];
     section3.itemArray = @[vm6];
     
     return @[section0,section1,section2,section3];

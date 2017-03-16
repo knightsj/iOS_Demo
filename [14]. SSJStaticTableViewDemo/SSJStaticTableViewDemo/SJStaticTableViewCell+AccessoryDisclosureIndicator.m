@@ -9,7 +9,7 @@
 #import "SJStaticTableViewCell+AccessoryDisclosureIndicator.h"
 
 @implementation SJStaticTableViewCell (AccessoryDisclosureIndicator)
-- (void)configureAccessoryDisclosureIndicatorCellWithViewModel:(SSJStaticTableviewCellViewModel *)viewModel
+- (void)configureAccessoryDisclosureIndicatorCellWithViewModel:(SJStaticTableviewCellViewModel *)viewModel
 {
     self.viewModel = viewModel;
     

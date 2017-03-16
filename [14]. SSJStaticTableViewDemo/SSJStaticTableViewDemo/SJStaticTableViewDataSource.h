@@ -11,15 +11,15 @@
 #import "Factory.h"
 
 @class SJStaticTableViewCell;
-@class SSJStaticTableviewCellViewModel;
-@class SSJStaticTableviewSectionViewModel;
+@class SJStaticTableviewCellViewModel;
+@class SJStaticTableviewSectionViewModel;
 
 @protocol SJStaticTableViewDataSource <UITableViewDataSource>
 
 @optional
 
-- (SSJStaticTableviewSectionViewModel *)tableView:(UITableView *)tableView sectionViewModelInSection:(NSInteger )section;
-- (SSJStaticTableviewCellViewModel *)tableView:(UITableView *)tableview cellViewModelAtIndexPath:(NSIndexPath *)indexPath;
+- (SJStaticTableviewSectionViewModel *)tableView:(UITableView *)tableView sectionViewModelInSection:(NSInteger )section;
+- (SJStaticTableviewCellViewModel *)tableView:(UITableView *)tableview cellViewModelAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

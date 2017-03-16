@@ -25,7 +25,7 @@
 
 - (void)createDataSource
 {
-    self.dataSource = [[SJStaticTableViewDataSource alloc] initWithViewModelsArray:[Factory mePageData] configureBlock:^(SJStaticTableViewCell *cell, SSJStaticTableviewCellViewModel *viewModel) {
+    self.dataSource = [[SJStaticTableViewDataSource alloc] initWithViewModelsArray:[Factory mePageData] configureBlock:^(SJStaticTableViewCell *cell, SJStaticTableviewCellViewModel *viewModel) {
         
         switch (viewModel.staticCellType) {
             case SSJStaticCellTypeSystemAccessoryDisclosureIndicator:
@@ -45,7 +45,7 @@
     }];
 }
 
-- (void)didSelectViewModel:(SSJStaticTableviewCellViewModel *)viewModel atIndexPath:(NSIndexPath *)indexPath
+- (void)didSelectViewModel:(SJStaticTableviewCellViewModel *)viewModel atIndexPath:(NSIndexPath *)indexPath
 {
     
 }

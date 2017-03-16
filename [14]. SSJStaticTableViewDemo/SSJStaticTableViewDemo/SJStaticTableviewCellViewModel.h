@@ -1,5 +1,5 @@
 //
-//  SSJStaticTableviewCellViewModel.h
+//  SJStaticTableviewCellViewModel.h
 //  SSJStaticTableViewDemo
 //
 //  Created by Sun Shijie on 2017/3/14.
@@ -26,7 +26,7 @@ typedef void(^SSJStaticCellSwitchChanged)(BOOL isOn);
 
 
 
-@interface SSJStaticTableviewCellViewModel : NSObject
+@interface SJStaticTableviewCellViewModel : NSObject
 
 //类型
 @property (nonatomic, assign) SSJStaticCellType staticCellType;

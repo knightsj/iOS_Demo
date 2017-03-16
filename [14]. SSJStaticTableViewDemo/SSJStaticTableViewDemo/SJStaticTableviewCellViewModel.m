@@ -1,22 +1,22 @@
 //
-//  SSJStaticTableviewCellViewModel.m
+//  SJStaticTableviewCellViewModel.m
 //  SSJStaticTableViewDemo
 //
 //  Created by Sun Shijie on 2017/3/14.
 //  Copyright © 2017年 Shijie. All rights reserved.
 //
 
-#import "SSJStaticTableviewCellViewModel.h"
+#import "SJStaticTableviewCellViewModel.h"
 
 
-@interface SSJStaticTableviewCellViewModel()
+@interface SJStaticTableviewCellViewModel()
 
 
 
 @end
 
 
-@implementation SSJStaticTableviewCellViewModel
+@implementation SJStaticTableviewCellViewModel
 
 - (instancetype)init
 {

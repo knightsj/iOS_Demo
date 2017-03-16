@@ -10,7 +10,7 @@
 
 @implementation SJStaticTableViewCell (MeAvatar)
 
-- (void)configureMeAvatarTableViewCellWithViewModel:(SSJStaticTableviewCellViewModel *)viewModel{
+- (void)configureMeAvatarTableViewCellWithViewModel:(SJStaticTableviewCellViewModel *)viewModel{
     
     self.viewModel = viewModel;
     

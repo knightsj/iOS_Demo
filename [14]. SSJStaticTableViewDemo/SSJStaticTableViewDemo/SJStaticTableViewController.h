@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SJStaticTableView.h"
-#import "SSJStaticTableviewCellViewModel.h"
-#import "SSJStaticTableviewSectionViewModel.h"
+#import "SJStaticTableviewCellViewModel.h"
+#import "SJStaticTableviewSectionViewModel.h"
 
 
 
