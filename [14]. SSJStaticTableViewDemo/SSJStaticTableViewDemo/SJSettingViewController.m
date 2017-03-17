@@ -75,6 +75,12 @@
         }
             break;
             
+        case 8:
+        {
+            NSLog(@"清理缓存");
+        }
+            break;
+            
             
         default:
             break;

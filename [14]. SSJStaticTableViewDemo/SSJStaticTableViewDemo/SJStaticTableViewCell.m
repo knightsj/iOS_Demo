@@ -10,11 +10,11 @@
 
 @implementation SJStaticTableViewCell
 
+
 - (void)layoutLeftPartSubViewsWithViewModel:(SJStaticTableviewCellViewModel *)viewModel
 {
     self.viewModel = viewModel;
     
-    //=============== 左侧部分 =============//
     //存在最左边的图片
     if (self.viewModel.defaultImage) {
         [self.contentView addSubview:self.leftImageView];
@@ -26,6 +26,8 @@
     }
 }
 
+
+#pragma mark- switch block
 - (void)switchTouched:(UISwitch *)indicatorSwitch
 {
     if (self.viewModel.switchValueDidChangeBlock){
@@ -33,7 +35,9 @@
     }
 }
 
-#pragma mark- default cell
+
+#pragma mark- system-like cell
+#pragma mark basic views
 - (UIImageView *)leftImageView
 {
     if (!_leftImageView) {
@@ -128,7 +132,9 @@
     return _indicatorImageView;
 }
 
-#pragma mark - logout cell
+
+
+#pragma mark  logout cell
 - (UILabel *)logoutLabel
 {
     if (!_logoutLabel) {
@@ -143,7 +149,8 @@
 }
 
 
-#pragma mark- custom mePage cell
+#pragma mark- custom cell
+#pragma mark MeController Avatar Cell
 - (UIImageView *)avatarImageView
 {
     if (!_avatarImageView) {

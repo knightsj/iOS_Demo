@@ -11,7 +11,11 @@
 
 @interface SJStaticTableviewCellViewModel()
 
-
+@property (nonatomic, assign, readwrite) BOOL hasIndicatorImageAndLabel;                   //右侧尖头左侧的文本和image是否同时存在
+@property (nonatomic, assign, readwrite) CGSize  defatultTitleLabelSize;                   //左侧默认Label的size
+@property (nonatomic, assign, readwrite) CGFloat indicatorLeftImgWidth;                    //右侧图片宽度
+@property (nonatomic, assign, readwrite) CGFloat indicatorLeftImgHeight;                   //右侧图片高度
+@property (nonatomic, assign, readwrite) CGSize  indicatorLeftTitleLabelSize;              //右侧label的size
 
 @end
 
