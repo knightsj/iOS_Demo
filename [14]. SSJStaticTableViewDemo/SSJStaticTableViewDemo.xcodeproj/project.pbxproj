@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB4963651E7BE4B200413ABB /* SJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4963641E7BE4B200413ABB /* SJNavigationController.m */; };
 		CB67ED5C1E792E9900943425 /* SJStaticTableViewCell+MeAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB67ED5B1E792E9900943425 /* SJStaticTableViewCell+MeAvatar.m */; };
 		CB67ED5F1E79309500943425 /* SJStaticTableViewCell+AccessoryDisclosureIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CB67ED5E1E79309500943425 /* SJStaticTableViewCell+AccessoryDisclosureIndicator.m */; };
 		CB67EDA91E79405E00943425 /* SJStaticTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB67EDA81E79405E00943425 /* SJStaticTableView.m */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB4963631E7BE4B200413ABB /* SJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJNavigationController.h; sourceTree = "<group>"; };
+		CB4963641E7BE4B200413ABB /* SJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJNavigationController.m; sourceTree = "<group>"; };
 		CB67ED5A1E792E9900943425 /* SJStaticTableViewCell+MeAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SJStaticTableViewCell+MeAvatar.h"; sourceTree = "<group>"; };
 		CB67ED5B1E792E9900943425 /* SJStaticTableViewCell+MeAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SJStaticTableViewCell+MeAvatar.m"; sourceTree = "<group>"; };
 		CB67ED5D1E79309500943425 /* SJStaticTableViewCell+AccessoryDisclosureIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SJStaticTableViewCell+AccessoryDisclosureIndicator.h"; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 			children = (
 				CB67EDB01E795B3700943425 /* SJStaticTableViewController.h */,
 				CB67EDB11E795B3700943425 /* SJStaticTableViewController.m */,
+				CB4963631E7BE4B200413ABB /* SJNavigationController.h */,
+				CB4963641E7BE4B200413ABB /* SJNavigationController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -448,6 +453,7 @@
 				CB67EDA91E79405E00943425 /* SJStaticTableView.m in Sources */,
 				CB6B9B431E77B01B004C998D /* SJStaticTableviewSectionViewModel.m in Sources */,
 				CB6B9B401E77AFFD004C998D /* SJStaticTableviewCellViewModel.m in Sources */,
+				CB4963651E7BE4B200413ABB /* SJNavigationController.m in Sources */,
 				CB67EDB81E7A2FB700943425 /* SJInfoViewController.m in Sources */,
 				CB67EDBB1E7A2FC400943425 /* SJSettingViewController.m in Sources */,
 				CB67EE091E7BAE5100943425 /* SJStaticTableViewCell+AccessorySwitch.m in Sources */,

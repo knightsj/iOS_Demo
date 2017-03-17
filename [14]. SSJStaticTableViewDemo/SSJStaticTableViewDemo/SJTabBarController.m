@@ -7,6 +7,7 @@
 //
 
 #import "SJTabBarController.h"
+#import "SJNavigationController.h"
 #import "SJDiscoverViewController.h"
 #import "SJMeViewController.h"
 #define kThemeColor [UIColor colorWithRed:0 green:(190 / 255.0) blue:(12 / 255.0) alpha:1]
@@ -40,7 +41,7 @@
     
     [configureArray enumerateObjectsUsingBlock:^(NSDictionary*  _Nonnull dict, NSUInteger idx, BOOL * _Nonnull stop) {
         UIViewController *vc = [NSClassFromString(dict[@"class"]) new];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        SJNavigationController *nav = [[SJNavigationController alloc] initWithRootViewController:vc];
         UITabBarItem *item = nav.tabBarItem;
         item.title = dict[@"title"];
         item.image = [UIImage imageNamed:dict[@"image_none_selected"]];

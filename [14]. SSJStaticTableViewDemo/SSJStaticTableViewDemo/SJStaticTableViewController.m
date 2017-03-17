@@ -16,7 +16,6 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
     [self configNav];
     [self createDataSource];
     [self createTableView];
