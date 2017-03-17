@@ -1,5 +1,5 @@
 //
-//  SJStaticTableViewCell+Switch.h
+//  SJStaticTableViewCell+AccessorySwitch.h
 //  SSJStaticTableViewDemo
 //
 //  Created by Sun Shijie on 2017/3/17.
@@ -8,6 +8,8 @@
 
 #import "SJStaticTableViewCell.h"
 
-@interface SJStaticTableViewCell (Switch)
+@interface SJStaticTableViewCell (AccessorySwitch)
+
 - (void)configureAccessorySwitchCellWithViewModel:(SJStaticTableviewCellViewModel *)viewModel;
+
 @end

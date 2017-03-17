@@ -7,8 +7,11 @@
 //
 
 #import "SJSettingViewController.h"
+
 #import "SJStaticTableViewCell+Logout.h"
-#import "SJStaticTableViewCell+Switch.h"
+#import "SJStaticTableViewCell+AccessorySwitch.h"
+#import "SJStaticTableViewCell+AccessoryNone.h"
+
 
 @interface SJSettingViewController ()
 
@@ -43,6 +46,12 @@
             case SSJStaticCellTypeSystemLogout:
             {
                 [cell configureLogoutTableViewCellWithViewModel:viewModel];
+            }
+                break;
+                
+            case SSJStaticCellTypeSystemAccessoryNone:
+            {
+                [cell configureAccessoryNoneCellWithViewModel:viewModel];
             }
                 break;
                 

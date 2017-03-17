@@ -141,8 +141,13 @@
     vm5.defaultTitle = @"关于微信";
     vm5.identifier = 5;
     
+    SJStaticTableviewCellViewModel *vm9 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm9.defaultTitle = @"没有Accessory";
+    vm9.staticCellType = SSJStaticCellTypeSystemAccessoryNone;
+    vm9.identifier = 9;
+    
     SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] init];
-    section2.itemArray = @[vm4,vm5];
+    section2.itemArray = @[vm4,vm5,vm9];
     
     
     // ========== section 3
