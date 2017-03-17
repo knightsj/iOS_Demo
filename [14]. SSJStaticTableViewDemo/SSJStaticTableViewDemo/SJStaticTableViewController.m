@@ -9,22 +9,30 @@
 #import "SJStaticTableViewController.h"
 #import "SJStaticTableViewDataSource.h"
 
-@implementation SJStaticTableViewController
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
+
+@implementation SJStaticTableViewController
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    [self configNav];
     [self createDataSource];
     [self createTableView];
+}
+
+- (void)configNav
+{
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    //修改导航条背景色
+    self.navigationController.navigationBar.barTintColor = SSJColorWithRGB(18, 18, 18, 1.0);
+    
+    //修改导航条标题颜色
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]];
+    
+    //修改导航条添加的按钮
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)createDataSource
@@ -36,12 +44,14 @@
 - (void)createTableView {
     
     if (!self.tableView) {
-         self.tableView = [[SJStaticTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+         self.tableView = [[SJStaticTableView alloc] initWithFrame:CGRectMake(0, 0, SSJScreenWidth, SSJScreenHeight)  style:UITableViewStyleGrouped];
+         self.tableView.contentInset = UIEdgeInsetsMake(44,0,0,0);
          self.tableView.sjDelegate = self;
          self.tableView.sjDataSource = self.dataSource;
         [self.view addSubview:self.tableView];
     }
 }
+
 
 
 @end

@@ -24,7 +24,7 @@
     vm0.avatarImage = [UIImage imageNamed:@"avatar"];
     vm0.userName = @"世杰";
     vm0.userID = @"微信号：xxxxxx";
-    vm0.codeImage = [UIImage imageNamed:@"code"];
+    vm0.codeImage = [UIImage imageNamed:@"qrcode"];
     vm0.staticCellType = SSJStaticCellTypeMeAvatar;
     
     SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] init];
@@ -34,24 +34,24 @@
     
     // ========== section 1
     SJStaticTableviewCellViewModel *vm1 = [[SJStaticTableviewCellViewModel alloc] init];
-    vm1.defaultImage = [UIImage imageNamed:@"favorites"];
+    vm1.defaultImage = [UIImage imageNamed:@"MoreMyAlbum"];
     vm1.defaultTitle = @"相册";
     vm1.identifier = 1;
     
     SJStaticTableviewCellViewModel *vm2 = [[SJStaticTableviewCellViewModel alloc] init];
-    vm2.defaultImage = [UIImage imageNamed:@"favorites"];
+    vm2.defaultImage = [UIImage imageNamed:@"MoreMyFavorites"];
     vm2.defaultTitle = @"收藏";
     vm2.identifier = 2;
     
     
     SJStaticTableviewCellViewModel *vm3 = [[SJStaticTableviewCellViewModel alloc] init];
-    vm3.defaultImage = [UIImage imageNamed:@"favorites"];
+    vm3.defaultImage = [UIImage imageNamed:@"MoreMyBankCard"];
     vm3.defaultTitle = @"钱包";
     vm3.identifier = 3;
 
     
     SJStaticTableviewCellViewModel *vm4 = [[SJStaticTableviewCellViewModel alloc] init];
-    vm4.defaultImage = [UIImage imageNamed:@"favorites"];
+    vm4.defaultImage = [UIImage imageNamed:@"MyCardPackageIcon"];
     vm4.defaultTitle = @"卡包";
     vm4.identifier = 4;
   
@@ -61,7 +61,7 @@
     
     // ========== section 2
     SJStaticTableviewCellViewModel *vm5 = [[SJStaticTableviewCellViewModel alloc] init];
-    vm5.defaultImage = [UIImage imageNamed:@"favorites"];
+    vm5.defaultImage = [UIImage imageNamed:@"emoticon"];
     vm5.defaultTitle = @"表情";
     vm5.identifier = 5;
     
@@ -72,7 +72,7 @@
     
     // ========== section 3
     SJStaticTableviewCellViewModel *vm6 = [[SJStaticTableviewCellViewModel alloc] init];
-    vm6.defaultImage = [UIImage imageNamed:@"favorites"];
+    vm6.defaultImage = [UIImage imageNamed:@"MoreSetting"];
     vm6.defaultTitle = @"设置";
     vm6.identifier = 7;
     
@@ -91,7 +91,7 @@
     vm0.defaultTitle = @"账号与安全";
     vm0.identifier = 0;
     vm0.indicatorLeftTitle = @"已保护";
-    vm0.indicatorLeftImage = [UIImage imageNamed:@"favorites"];
+    vm0.indicatorLeftImage = [UIImage imageNamed:@"ProfileLockOn"];
     vm0.isImageFirst = NO;
     
     SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] init];
@@ -166,7 +166,7 @@
     SJStaticTableviewCellViewModel *vm3 = [[SJStaticTableviewCellViewModel alloc] init];
     vm3.defaultTitle = @"我的二维码";
     vm3.identifier = 3;
-    vm3.indicatorLeftImage = [UIImage imageNamed:@"code"];
+    vm3.indicatorLeftImage = [UIImage imageNamed:@"qrcode"];
     
     SJStaticTableviewCellViewModel *vm4 = [[SJStaticTableviewCellViewModel alloc] init];
     vm4.defaultTitle = @"我的地址";
@@ -207,6 +207,75 @@
      return @[section0,section1,section2];
     
 }
+
++ (NSArray *)momentsPageData
+{
+    // ========== section 0
+    SJStaticTableviewCellViewModel *vm0 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm0.defaultImage = [UIImage imageNamed:@"ff_IconShowAlbum"];
+    vm0.defaultTitle = @"朋友圈";
+    vm0.indicatorLeftImage = [UIImage imageNamed:@"avatar"];
+    vm0.identifier = 0;
+    
+    SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] init];
+    section0.itemArray = @[vm0];
+    
+    
+    
+    // ========== section 1
+    SJStaticTableviewCellViewModel *vm1 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm1.defaultImage = [UIImage imageNamed:@"ff_IconQRCode"];
+    vm1.defaultTitle = @"扫一扫";
+    vm1.identifier = 1;
+    
+    SJStaticTableviewCellViewModel *vm2 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm2.defaultImage = [UIImage imageNamed:@"ff_IconShake"];
+    vm2.defaultTitle = @"摇一摇";
+    vm2.identifier = 2;
+    
+    
+    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] init];
+    section1.itemArray = @[vm1,vm2];
+    
+    
+    SJStaticTableviewCellViewModel *vm3 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm3.defaultImage = [UIImage imageNamed:@"ff_IconLocationService"];
+    vm3.defaultTitle = @"附近的人";
+    vm3.identifier = 3;
+    
+    
+    SJStaticTableviewCellViewModel *vm4 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm4.defaultImage = [UIImage imageNamed:@"ff_IconBottle"];
+    vm4.defaultTitle = @"漂流瓶";
+    vm4.identifier = 4;
+    
+    
+    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] init];
+    section2.itemArray = @[vm3,vm4];
+    
+    
+    // ========== section 2
+    SJStaticTableviewCellViewModel *vm5 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm5.defaultImage = [UIImage imageNamed:@"CreditCard_ShoppingBag"];
+    vm5.defaultTitle = @"购物";
+    vm5.identifier = 5;
+
+    
+    // ========== section 3
+    SJStaticTableviewCellViewModel *vm6 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm6.defaultImage = [UIImage imageNamed:@"MoreGame"];
+    vm6.defaultTitle = @"游戏";
+    vm6.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm6.indicatorLeftTitle = @"一起来玩王者荣耀呀!";
+    vm6.identifier = 7;
+    
+    
+    SJStaticTableviewSectionViewModel *section3 = [[SJStaticTableviewSectionViewModel alloc] init];
+    section3.itemArray = @[vm5,vm6];
+    
+    return @[section0,section1,section2,section3];
+}
+
 
 
 @end

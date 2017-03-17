@@ -55,6 +55,7 @@
         case 6:
         {
             NSLog(@"退出登录");
+            [self showAlertWithMessage:@"真的要退出登录嘛？"];
         }
             break;
             
@@ -62,6 +63,23 @@
         default:
             break;
     }
+}
+
+- (void)showAlertWithMessage:(NSString *)alertTitle
+{
+    
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:alertTitle message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    UIAlertAction *actionOK = [UIAlertAction actionWithTitle:@"是的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [vc addAction:actionCancel];
+    [vc addAction:actionOK];
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 
