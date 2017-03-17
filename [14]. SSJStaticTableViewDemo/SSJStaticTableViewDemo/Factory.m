@@ -22,7 +22,7 @@
     vm0.identifier = 0;
     vm0.cellHeight = 80;
     vm0.avatarImage = [UIImage imageNamed:@"avatar"];
-    vm0.userName = @"世杰";
+    vm0.userName = @"J_Knight";
     vm0.userID = @"微信号：xxxxxx";
     vm0.codeImage = [UIImage imageNamed:@"qrcode"];
     vm0.staticCellType = SSJStaticCellTypeMeAvatar;
@@ -104,6 +104,21 @@
     vm1.defaultTitle = @"新消息通知";
     vm1.identifier = 1;
     
+    //额外添加switch
+    SJStaticTableviewCellViewModel *vm7 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm7.defaultTitle = @"夜间模式";
+    vm7.switchValueDidChangeBlock = ^(BOOL isON){
+        NSString *message = isON?@"打开夜间模式":@"关闭夜间模式";
+        NSLog(@"%@",message);
+    };
+    vm7.staticCellType = SSJStaticCellTypeSystemAccessorySwitch;
+    vm7.identifier = 7;
+    
+    SJStaticTableviewCellViewModel *vm8 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm8.defaultTitle = @"清理缓存";
+    vm8.indicatorLeftTitle = @"12.3M";
+    vm8.identifier = 8;
+    
     SJStaticTableviewCellViewModel *vm2 = [[SJStaticTableviewCellViewModel alloc] init];
     vm2.defaultTitle = @"隐私";
     vm2.identifier = 2;
@@ -115,7 +130,7 @@
     
     
     SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] init];
-    section1.itemArray = @[vm1,vm2,vm3];
+    section1.itemArray = @[vm1,vm7,vm8,vm2,vm3];
     
     // ========== section 2
     SJStaticTableviewCellViewModel *vm4 = [[SJStaticTableviewCellViewModel alloc] init];
@@ -154,7 +169,7 @@
     
     SJStaticTableviewCellViewModel *vm1 = [[SJStaticTableviewCellViewModel alloc] init];
     vm1.defaultTitle = @"名字";
-    vm1.indicatorLeftTitle = @"世杰";
+    vm1.indicatorLeftTitle = @"J_Knight";
     vm1.identifier = 1;
     
     SJStaticTableviewCellViewModel *vm2 = [[SJStaticTableviewCellViewModel alloc] init];

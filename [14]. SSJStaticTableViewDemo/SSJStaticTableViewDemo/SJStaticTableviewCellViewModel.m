@@ -34,19 +34,19 @@
 {
     //最左侧的图片永远是固定大小
     _defaultImage = defaultImage;
-    _indicatorLeftImgWidth = SSJImgWidth;
-    _indicatorLeftImgHeight = SSJImgWidth;
+    _indicatorLeftImgWidth = SJImgWidth;
+    _indicatorLeftImgHeight = SJImgWidth;
 }
 
 - (void)setDefaultTitle:(NSString *)defaultTitle
 {
     _defaultTitle = defaultTitle;
-    _defatultTitleLabelSize = [self sizeForTitle:defaultTitle withFont:SSJDefaultTitleFont];
+    _defatultTitleLabelSize = [self sizeForTitle:defaultTitle withFont:SJDefaultTitleFont];
     
     //very long title
-    if (_defatultTitleLabelSize.width > SSJTitleLimit) {
+    if (_defatultTitleLabelSize.width > SJTitleLimit) {
         CGSize size = _defatultTitleLabelSize;
-        size.width = SSJTitleLimit;
+        size.width = SJTitleLimit;
         _defatultTitleLabelSize = size;
     }
 }
@@ -54,12 +54,12 @@
 - (void)setIndicatorLeftTitle:(NSString *)indicatorLeftTitle
 {
     _indicatorLeftTitle = indicatorLeftTitle;
-    _indicatorLeftTitleLabelSize = [self sizeForTitle:_indicatorLeftTitle withFont:SSJIndicatorLeftTitleFont];
+    _indicatorLeftTitleLabelSize = [self sizeForTitle:_indicatorLeftTitle withFont:SJIndicatorLeftTitleFont];
     
     //very long title
-    if (_indicatorLeftTitleLabelSize.width > SSJTitleLimit) {
+    if (_indicatorLeftTitleLabelSize.width > SJTitleLimit) {
         CGSize size = _indicatorLeftTitleLabelSize;
-        size.width = SSJTitleLimit;
+        size.width = SJTitleLimit;
         _indicatorLeftTitleLabelSize = size;
     }
     

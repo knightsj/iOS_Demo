@@ -8,6 +8,7 @@
 
 #import "SJSettingViewController.h"
 #import "SJStaticTableViewCell+Logout.h"
+#import "SJStaticTableViewCell+Switch.h"
 
 @interface SJSettingViewController ()
 
@@ -30,6 +31,12 @@
             case SSJStaticCellTypeSystemAccessoryDisclosureIndicator:
             {
                 [cell configureAccessoryDisclosureIndicatorCellWithViewModel:viewModel];
+            }
+                break;
+                
+            case SSJStaticCellTypeSystemAccessorySwitch:
+            {
+                [cell configureAccessorySwitchCellWithViewModel:viewModel];
             }
                 break;
                 

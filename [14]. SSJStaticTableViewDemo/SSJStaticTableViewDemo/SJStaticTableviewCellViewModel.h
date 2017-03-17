@@ -23,6 +23,8 @@ typedef NS_ENUM(NSInteger, SSJStaticCellType) {
     
 };
 
+typedef void(^SwitchValueChagedBlock)(BOOL isOn);
+
 
 @interface SJStaticTableviewCellViewModel : NSObject
 
@@ -45,6 +47,7 @@ typedef NS_ENUM(NSInteger, SSJStaticCellType) {
 @property (nonatomic, strong, readwrite) UIImage *indicatorLeftImage;  //右侧箭头左侧的image
 @property (nonatomic, assign, readwrite) BOOL hasIndicatorImageAndLabel;  //右侧尖头左侧的文本和image是否同时存在
 @property (nonatomic, assign, readwrite) BOOL isImageFirst;            //右侧尖头左侧的文本和image同时存在时，是否是image挨着箭头，默认是
+@property (nonatomic, copy, readwrite) SwitchValueChagedBlock switchValueDidChangeBlock;
 
 
 //长宽数据

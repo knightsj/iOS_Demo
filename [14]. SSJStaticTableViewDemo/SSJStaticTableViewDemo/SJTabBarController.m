@@ -20,12 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tabBar.tintColor = kThemeColor;
+    
     NSArray *configureArray = @[
                             @{
-                               @"class":@"SJDiscoverViewController",
-                               @"title":@"发现",
-                               @"image_none_selected":@"tabbar_discover",
-                               @"image_selected":@"moments_selected"
+                                @"class":@"SJDiscoverViewController",
+                                @"title":@"发现",
+                                @"image_none_selected":@"tabbar_discover",
+                                @"image_selected":@"tabbar_discoverHL"
                               },
                             
                             @{

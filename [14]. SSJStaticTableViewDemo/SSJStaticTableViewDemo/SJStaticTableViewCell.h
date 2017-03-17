@@ -33,4 +33,7 @@
 //退出登录的按钮
 @property (nonatomic, strong) UILabel *logoutLabel;
 
+
+- (void)layoutLeftPartSubViewsWithViewModel:(SJStaticTableviewCellViewModel *)viewModel;
+
 @end
