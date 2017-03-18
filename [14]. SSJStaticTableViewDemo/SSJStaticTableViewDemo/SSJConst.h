@@ -25,13 +25,13 @@
 
 
 //font
-#define SJDefaultTitleFont       [UIFont systemFontOfSize:15]
-#define SJLogoutButtonFont       [UIFont systemFontOfSize:16]
-#define SJIndicatorLeftTitleFont [UIFont systemFontOfSize:13]
+#define SJLeftTitleTextFont           [UIFont systemFontOfSize:15]
+#define SJLogoutButtonFont        [UIFont systemFontOfSize:16]
+#define SJIndicatorLeftTitleTextFont  [UIFont systemFontOfSize:13]
 
 //color
-#define SJDefaultTitleColor           SJColorWithRGB(0,0,0,1)
-#define SJIndicatorLeftTitleColor     SJColorWithRGB(136,136,136,1)
+#define SJLeftTitleTextColor              [UIColor blackColor]
+#define SJIndicatorLeftTitleTextColor     SJColorWithRGB(136,136,136,1)
 #define SJColorWithRGB(R,G,B,A)       [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
 
 #endif /* SSJConst_h */

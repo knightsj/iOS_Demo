@@ -18,7 +18,7 @@
     [self.contentView addSubview:self.indicatorArrow];
     
     //右侧存在箭头+文字
-    if ( (viewModel.indicatorLeftTitle) && (viewModel.indicatorLeftTitleLabelSize.width != 0)) {
+    if ( (viewModel.indicatorLeftTitle) && (viewModel.indicatorLeftLabelSize.width != 0)) {
         [self.contentView addSubview:self.indicatorLeftLabel];
     }
     

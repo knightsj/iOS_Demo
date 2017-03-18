@@ -50,6 +50,6 @@
         [self addChildViewController:nav];
 
     }];
-    self.selectedIndex = 1;
+    self.selectedIndex = 0;
 }
 @end

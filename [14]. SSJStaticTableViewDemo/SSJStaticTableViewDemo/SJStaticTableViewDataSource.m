@@ -34,8 +34,8 @@
 {
     if (self.viewModelsArray.count > indexPath.section) {
         SJStaticTableviewSectionViewModel *sectionViewModel = [self.viewModelsArray objectAtIndex:indexPath.section];
-        if (sectionViewModel.itemArray.count > indexPath.row) {
-            return [sectionViewModel.itemArray objectAtIndex:indexPath.row];
+        if (sectionViewModel.cellViewModelsArray.count > indexPath.row) {
+            return [sectionViewModel.cellViewModelsArray objectAtIndex:indexPath.row];
         }
     }
     return nil;
@@ -59,14 +59,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     SJStaticTableviewSectionViewModel *vm = self.viewModelsArray[section];
-    return vm.itemArray.count;
+    return vm.cellViewModelsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     SJStaticTableviewSectionViewModel *sectionViewModel = self.viewModelsArray[indexPath.section];
-    SJStaticTableviewCellViewModel *cellViewModel = sectionViewModel.itemArray[indexPath.row];
+    SJStaticTableviewCellViewModel *cellViewModel = sectionViewModel.cellViewModelsArray[indexPath.row];
     
     SJStaticTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellViewModel.cellID];
     if (!cell) {

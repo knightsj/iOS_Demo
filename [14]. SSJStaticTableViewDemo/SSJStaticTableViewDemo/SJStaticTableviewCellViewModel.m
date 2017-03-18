@@ -12,10 +12,10 @@
 @interface SJStaticTableviewCellViewModel()
 
 @property (nonatomic, assign, readwrite) BOOL hasIndicatorImageAndLabel;                   //右侧尖头左侧的文本和image是否同时存在
-@property (nonatomic, assign, readwrite) CGSize  defatultTitleLabelSize;                   //左侧默认Label的size
+@property (nonatomic, assign, readwrite) CGSize  leftTitleLabelSize;                   //左侧默认Label的size
 @property (nonatomic, assign, readwrite) CGFloat indicatorLeftImgWidth;                    //右侧图片宽度
 @property (nonatomic, assign, readwrite) CGFloat indicatorLeftImgHeight;                   //右侧图片高度
-@property (nonatomic, assign, readwrite) CGSize  indicatorLeftTitleLabelSize;              //右侧label的size
+@property (nonatomic, assign, readwrite) CGSize  indicatorLeftLabelSize;              //右侧label的size
 
 @end
 
@@ -28,67 +28,79 @@
     if (self) {        
         _cellHeight = 44;
         _cellID = @"defaultCell";
-        _staticCellType = SSJStaticCellTypeSystemAccessoryDisclosureIndicator;//默认是三角箭头
+        _staticCellType = SSJStaticCellTypeSystemAccessoryDisclosureIndicator;//默认是存在三角箭头的cell
         _isImageFirst = YES;
+        //都是默认配置
+        _leftLabelTextFont = SJLeftTitleTextFont;
+        _leftLabelTextColor = SJLeftTitleTextColor;
+        _leftImageSize = CGSizeMake(SJImgWidth, SJImgWidth);
+        _indicatorLeftLabelTextFont = SJIndicatorLeftTitleTextFont;
+        _indicatorLeftLabelTextColor = SJIndicatorLeftTitleTextColor;
+        _indicatorLeftImageSize = CGSizeMake(SJImgWidth, SJImgWidth);
     }
     return self;
 }
 
-- (void)setDefaultImage:(UIImage *)defaultImage
-{
-    //最左侧的图片永远是固定大小
-    _defaultImage = defaultImage;
-    _indicatorLeftImgWidth = SJImgWidth;
-    _indicatorLeftImgHeight = SJImgWidth;
-}
 
-- (void)setDefaultTitle:(NSString *)defaultTitle
+- (void)setLeftTitle:(NSString *)leftTitle
 {
-    _defaultTitle = defaultTitle;
-    _defatultTitleLabelSize = [self sizeForTitle:defaultTitle withFont:SJDefaultTitleFont];
-    
-    //very long title
-    if (_defatultTitleLabelSize.width > SJTitleLimit) {
-        CGSize size = _defatultTitleLabelSize;
-        size.width = SJTitleLimit;
-        _defatultTitleLabelSize = size;
+    if (_leftTitle != leftTitle) {
+        
+        _leftTitle = leftTitle;
+        _leftTitleLabelSize = [self sizeForTitle:leftTitle withFont:_leftLabelTextFont];
+        
+        //very long title
+        if (_leftTitleLabelSize.width > SJTitleLimit) {
+            CGSize size = _leftTitleLabelSize;
+            size.width = SJTitleLimit;
+            _leftTitleLabelSize = size;
+        }
+        
     }
 }
 
 - (void)setIndicatorLeftTitle:(NSString *)indicatorLeftTitle
 {
-    _indicatorLeftTitle = indicatorLeftTitle;
-    _indicatorLeftTitleLabelSize = [self sizeForTitle:_indicatorLeftTitle withFont:SJIndicatorLeftTitleFont];
-    
-    //very long title
-    if (_indicatorLeftTitleLabelSize.width > SJTitleLimit) {
-        CGSize size = _indicatorLeftTitleLabelSize;
-        size.width = SJTitleLimit;
-        _indicatorLeftTitleLabelSize = size;
-    }
-    
-    if (_indicatorLeftImage) {
-        _hasIndicatorImageAndLabel = YES;
+    if (_indicatorLeftTitle != indicatorLeftTitle) {
+        
+        _indicatorLeftTitle = indicatorLeftTitle;
+        _indicatorLeftLabelSize = [self sizeForTitle:_indicatorLeftTitle withFont:_indicatorLeftLabelTextFont];
+        
+        //very long title
+        if (_indicatorLeftLabelSize.width > SJTitleLimit) {
+            CGSize size = _indicatorLeftLabelSize;
+            size.width = SJTitleLimit;
+            _indicatorLeftLabelSize = size;
+        }
+        
+        if (_indicatorLeftImage) {
+            _hasIndicatorImageAndLabel = YES;
+        }
     }
 }
 
 - (void)setIndicatorLeftImage:(UIImage *)indicatorLeftImage
 {
-    _indicatorLeftImage = indicatorLeftImage;
-    
-    CGFloat limitHeight = self.cellHeight - 2*SJTopGap;
+    if (_indicatorLeftImage != indicatorLeftImage) {
         
-    if (_indicatorLeftImage.size.height < limitHeight) {
-        _indicatorLeftImgHeight = _indicatorLeftImage.size.height;
-        _indicatorLeftImgWidth = _indicatorLeftImage.size.width;
-    }else{
-        //very high image
-        _indicatorLeftImgHeight = limitHeight;
-        _indicatorLeftImgWidth = (_indicatorLeftImage.size.width / _indicatorLeftImage.size.height) * _indicatorLeftImgHeight ;
-    }
-    
-    if (_indicatorLeftTitle) {
-        _hasIndicatorImageAndLabel = YES;
+        _indicatorLeftImage = indicatorLeftImage;
+        
+        CGFloat limitHeight = self.cellHeight - 2*SJTopGap;
+        
+        if (_indicatorLeftImage.size.height < limitHeight) {
+            _indicatorLeftImgHeight = _indicatorLeftImage.size.height;
+            _indicatorLeftImgWidth = _indicatorLeftImage.size.width;
+            
+        }else{
+            // image with very large height
+            _indicatorLeftImgHeight = limitHeight;
+            _indicatorLeftImgWidth = (_indicatorLeftImage.size.width / _indicatorLeftImage.size.height) * _indicatorLeftImgHeight ;
+        }
+        
+        if (_indicatorLeftTitle) {
+            _hasIndicatorImageAndLabel = YES;
+        }
+        
     }
 }
 
