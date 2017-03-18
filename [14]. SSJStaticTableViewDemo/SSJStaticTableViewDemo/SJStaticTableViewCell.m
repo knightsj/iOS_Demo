@@ -54,7 +54,13 @@
          _leftTitleLabel.font = _viewModel.leftLabelTextFont;
          _leftTitleLabel.textColor = _viewModel.leftLabelTextColor;
          _leftTitleLabel.text = _viewModel.leftTitle;
-         _leftTitleLabel.frame = CGRectMake( CGRectGetMaxX(_leftImageView.frame) + SJLeftGap,  (_viewModel.cellHeight - _viewModel.leftTitleLabelSize.height)/2, _viewModel.leftTitleLabelSize.width, _viewModel.leftTitleLabelSize.height);
+         CGFloat x = 0;
+        if (_leftImageView) {
+            x = CGRectGetMaxX(_leftImageView.frame) + _viewModel.leftImageAndLabelGap;
+        }else{
+            x = SJLeftGap;
+        }
+         _leftTitleLabel.frame = CGRectMake( x, (_viewModel.cellHeight - _viewModel.leftTitleLabelSize.height)/2, _viewModel.leftTitleLabelSize.width, _viewModel.leftTitleLabelSize.height);
     }
     return _leftTitleLabel;
 }
@@ -95,7 +101,7 @@
             //同时存在
             if (_viewModel.isImageFirst) {
                 
-                _indicatorLeftLabel.frame = CGRectMake(SJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - SJRightMiddleGap - _viewModel.indicatorLeftImgWidth - SJLeftGap - _viewModel.indicatorLeftLabelSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftLabelSize.height)/2, _viewModel.indicatorLeftLabelSize.width, _viewModel.indicatorLeftLabelSize.height);
+                _indicatorLeftLabel.frame = CGRectMake(SJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - _viewModel.indicatorLeftImageAndLabelGap - _viewModel.indicatorLeftImageSize.width - SJLeftGap - _viewModel.indicatorLeftLabelSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftLabelSize.height)/2, _viewModel.indicatorLeftLabelSize.width, _viewModel.indicatorLeftLabelSize.height);
                 
             }else{
                 
@@ -113,16 +119,16 @@
          _indicatorImageView = [[UIImageView alloc] initWithImage:_viewModel.indicatorLeftImage];
         
         if (!_viewModel.hasIndicatorImageAndLabel) {
-            _indicatorImageView.frame = CGRectMake(_indicatorArrow.frame.origin.x - SJLeftGap - _viewModel.indicatorLeftImgWidth, (_viewModel.cellHeight - _viewModel.indicatorLeftImgHeight)/2, _viewModel.indicatorLeftImgWidth , _viewModel.indicatorLeftImgHeight);
+            _indicatorImageView.frame = CGRectMake(_indicatorArrow.frame.origin.x - SJLeftGap - _viewModel.indicatorLeftImageSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftImageSize.height)/2, _viewModel.indicatorLeftImageSize.width , _viewModel.indicatorLeftImageSize.height);
         }else{
             
             if (_viewModel.isImageFirst) {
                 
-                _indicatorImageView.frame = CGRectMake(SJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - SJLeftGap - _viewModel.indicatorLeftImgWidth, (_viewModel.cellHeight - _viewModel.indicatorLeftImgHeight)/2, _viewModel.indicatorLeftImgWidth, _viewModel.indicatorLeftImgHeight);
+                _indicatorImageView.frame = CGRectMake(SJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - SJLeftGap - _viewModel.indicatorLeftImageSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftImageSize.height)/2, _viewModel.indicatorLeftImageSize.width, _viewModel.indicatorLeftImageSize.height);
                 
             }else{
                 
-                _indicatorImageView.frame = CGRectMake(SJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - SJRightMiddleGap - _viewModel.indicatorLeftLabelSize.width - SJLeftGap - _viewModel.indicatorLeftImgWidth, (_viewModel.cellHeight - _viewModel.indicatorLeftImgHeight)/2, _viewModel.indicatorLeftImgWidth,_viewModel.indicatorLeftImgHeight);
+                _indicatorImageView.frame = CGRectMake(SJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - _viewModel.indicatorLeftImageAndLabelGap - _viewModel.indicatorLeftLabelSize.width - SJLeftGap - _viewModel.indicatorLeftImageSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftImageSize.height)/2, _viewModel.indicatorLeftImageSize.width,_viewModel.indicatorLeftImageSize.height);
                 
             }
 

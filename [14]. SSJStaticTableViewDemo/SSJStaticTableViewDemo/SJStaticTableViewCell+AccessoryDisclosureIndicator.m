@@ -23,7 +23,7 @@
     }
     
     //右侧存在箭头+图片
-    if ((self.viewModel.indicatorLeftImage) && (viewModel.indicatorLeftImgWidth != 0)){
+    if ((self.viewModel.indicatorLeftImage) && (viewModel.indicatorLeftImageSize.height != 0)){
         [self.contentView addSubview:self.indicatorImageView];
     }
     

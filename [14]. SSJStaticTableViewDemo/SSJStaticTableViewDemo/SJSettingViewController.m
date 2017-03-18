@@ -7,10 +7,13 @@
 //
 
 #import "SJSettingViewController.h"
+#import "SJCustomCellsViewController.h"
+#import "SJCustomCellsOneSectionViewController.h"
 
 #import "SJStaticTableViewCell+Logout.h"
 #import "SJStaticTableViewCell+AccessorySwitch.h"
 #import "SJStaticTableViewCell+AccessoryNone.h"
+
 
 
 @interface SJSettingViewController ()
@@ -81,6 +84,21 @@
         }
             break;
             
+        case 9:
+        {
+            NSLog(@"跳转到定制性cell展示页面 - 分组");
+            SJCustomCellsViewController *vc = [[SJCustomCellsViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+            
+        case 10:
+        {
+            NSLog(@"跳转到定制性cell展示页面 - 同组");
+            SJCustomCellsOneSectionViewController *vc = [[SJCustomCellsOneSectionViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
             
         default:
             break;

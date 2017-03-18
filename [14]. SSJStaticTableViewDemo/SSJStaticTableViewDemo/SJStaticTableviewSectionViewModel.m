@@ -7,20 +7,10 @@
 //
 
 #import "SJStaticTableviewSectionViewModel.h"
-#import "SSJConst.h"
+#import "SJConst.h"
 #import "SJStaticTableviewCellViewModel.h"
 
 @implementation SJStaticTableviewSectionViewModel
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _sectionHeaderHeight = 10;
-        _sectionFooterHeight = 10;
-    }
-    return self;
-}
 
 - (instancetype)initWithcellViewModelsArray:(NSArray *)cellViewModelsArray
 {
@@ -31,22 +21,34 @@
         _leftLabelTextFont = SJLeftTitleTextFont;
         _leftLabelTextColor = SJLeftTitleTextColor;
         _leftImageSize = CGSizeMake(SJImgWidth, SJImgWidth);
+        _leftImageAndLabelGap = SJLeftMiddleGap;
         _indicatorLeftLabelTextFont = SJIndicatorLeftTitleTextFont;
         _indicatorLeftLabelTextColor = SJIndicatorLeftTitleTextColor;
         _indicatorLeftImageSize = CGSizeMake(SJImgWidth, SJImgWidth);
-        _cellViewModelsArray = cellViewModelsArray;
+        _indicatorLeftImageAndLabelGap = SJRightMiddleGap;
+        _cellViewModelsArray = cellViewModelsArray;        
     }
     return self;
 }
 
 - (void)setLeftLabelTextFont:(UIFont *)leftLabelTextFont
 {
-    
-    if (![self font1:_leftLabelTextFont hasSameFontSizeOfFont2:leftLabelTextFont]) {
+    if (_leftLabelTextFont != leftLabelTextFont) {
         
-         _leftLabelTextFont = leftLabelTextFont;
-        [_cellViewModelsArray makeObjectsPerformSelector:@selector(setLeftLabelTextFont:) withObject:_leftLabelTextFont];
-
+        if (![self font1:_leftLabelTextFont hasSameFontSizeOfFont2:leftLabelTextFont]) {
+            
+            _leftLabelTextFont = leftLabelTextFont;
+            
+            //如果新的宽度大于原来的宽度，需要重新设置，否则不需要
+            [_cellViewModelsArray enumerateObjectsUsingBlock:^(SJStaticTableviewCellViewModel * viewModel, NSUInteger idx, BOOL * _Nonnull stop) {
+                viewModel.leftLabelTextFont = _leftLabelTextFont;
+                CGSize size = [self sizeForTitle:viewModel.leftTitle withFont:_leftLabelTextFont];
+                if (size.width > viewModel.leftTitleLabelSize.width) {
+                    viewModel.leftTitleLabelSize = size;
+                }
+            }];
+            
+        }
     }
 }
 
@@ -72,11 +74,33 @@
     }
 }
 
+- (void)setLeftImageAndLabelGap:(CGFloat)leftImageAndLabelGap
+{
+    if (_leftImageAndLabelGap != leftImageAndLabelGap) {
+        _leftImageAndLabelGap = leftImageAndLabelGap;
+        [_cellViewModelsArray enumerateObjectsUsingBlock:^(SJStaticTableviewCellViewModel * viewModel, NSUInteger idx, BOOL * _Nonnull stop) {
+            viewModel.leftImageAndLabelGap = _leftImageAndLabelGap;
+        }];
+    }
+}
+
 - (void)setIndicatorLeftLabelTextFont:(UIFont *)indicatorLeftLabelTextFont
 {
-    if (![self font1:_indicatorLeftLabelTextFont hasSameFontSizeOfFont2:indicatorLeftLabelTextFont]) {
-        _indicatorLeftLabelTextFont = indicatorLeftLabelTextFont;
-        [_cellViewModelsArray makeObjectsPerformSelector:@selector(setIndicatorLeftLabelTextFont:) withObject:_indicatorLeftLabelTextFont];
+    if (_indicatorLeftLabelTextFont != indicatorLeftLabelTextFont) {
+        
+        if (![self font1:_indicatorLeftLabelTextFont hasSameFontSizeOfFont2:indicatorLeftLabelTextFont]) {
+            _indicatorLeftLabelTextFont = indicatorLeftLabelTextFont;
+            
+            //如果新的宽度大于原来的宽度，需要重新设置，否则不需要
+            [_cellViewModelsArray enumerateObjectsUsingBlock:^(SJStaticTableviewCellViewModel * viewModel, NSUInteger idx, BOOL * _Nonnull stop) {
+                viewModel.indicatorLeftLabelTextFont = _indicatorLeftLabelTextFont;
+                CGSize size = [self sizeForTitle:viewModel.indicatorLeftTitle withFont:_indicatorLeftLabelTextFont];
+                if (size.width > viewModel.indicatorLeftLabelSize.width) {
+                    viewModel.indicatorLeftLabelSize = size;
+                }
+            }];
+        }
+        
     }
 }
 
@@ -94,7 +118,7 @@
     SJStaticTableviewCellViewModel *viewMoel = _cellViewModelsArray.firstObject;
     CGFloat cellHeight = viewMoel.cellHeight;
     
-    if ( (!CGSizeEqualToSize(_leftImageSize, indicatorLeftImageSize)) && (indicatorLeftImageSize.height < cellHeight)) {
+    if ( (!CGSizeEqualToSize(_indicatorLeftImageSize, indicatorLeftImageSize)) && (indicatorLeftImageSize.height < cellHeight)) {
         
         _indicatorLeftImageSize = indicatorLeftImageSize;
         
@@ -104,6 +128,16 @@
          }];
     }
     
+}
+
+- (void)setIndicatorLeftImageAndLabelGap:(CGFloat)indicatorLeftImageAndLabelGap
+{
+    if (_indicatorLeftImageAndLabelGap != indicatorLeftImageAndLabelGap) {
+        _indicatorLeftImageAndLabelGap = indicatorLeftImageAndLabelGap;
+        [_cellViewModelsArray enumerateObjectsUsingBlock:^(SJStaticTableviewCellViewModel * viewModel, NSUInteger idx, BOOL * _Nonnull stop) {
+            viewModel.indicatorLeftImageAndLabelGap = _indicatorLeftImageAndLabelGap;
+        }];
+    }
 }
 
 //判断字体大小是否一致
@@ -143,5 +177,15 @@
     return res;
 }
 
+- (CGSize)sizeForTitle:(NSString *)title withFont:(UIFont *)font
+{
+    CGRect titleRect = [title boundingRectWithSize:CGSizeMake(FLT_MAX, FLT_MAX)
+                                           options:NSStringDrawingUsesLineFragmentOrigin
+                                        attributes:@{NSFontAttributeName : font}
+                                           context:nil];
+    
+    return CGSizeMake(titleRect.size.width,
+                      titleRect.size.height);
+}
 
 @end

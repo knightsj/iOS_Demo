@@ -134,12 +134,17 @@
     vm5.leftTitle = @"关于微信";
     vm5.identifier = 5;
     
+    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm4,vm5]];
+    
     SJStaticTableviewCellViewModel *vm9 = [[SJStaticTableviewCellViewModel alloc] init];
-    vm9.leftTitle = @"没有Accessory";
-    vm9.staticCellType = SSJStaticCellTypeSystemAccessoryNone;
+    vm9.leftTitle = @"定制性cell展示页面 - 分组";
     vm9.identifier = 9;
     
-    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm4,vm5,vm9]];
+    SJStaticTableviewCellViewModel *vm10 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm10.leftTitle = @"定制性cell展示页面 - 同组";
+    vm10.identifier = 10;
+    
+    SJStaticTableviewSectionViewModel *section4 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm9,vm10]];
     
     
     // ========== section 3
@@ -151,7 +156,7 @@
     
     SJStaticTableviewSectionViewModel *section3 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm6]];
     
-    return @[section0,section1,section2,section3];
+    return @[section0,section1,section2,section4,section3];
 }
 
 + (NSArray *)infoPageData
@@ -279,6 +284,147 @@
     return @[section0,section1,section2,section3];
 }
 
++ (NSArray *)customCellsPageData
+{
+    //默认配置
+    SJStaticTableviewCellViewModel *vm1 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm1.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm1.leftTitle = @"全部默认配置，用于对照";
+    vm1.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm1.indicatorLeftTitle = @"王者荣耀!";
+    
+    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm1]];
+    
+    SJStaticTableviewCellViewModel *vm2 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm2.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm2.leftTitle = @"左侧图片变小";
+    vm2.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm2.indicatorLeftTitle = @"王者荣耀!";
+    
+    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm2]];
+    section2.leftImageSize = CGSizeMake(20, 20);
+    
+    SJStaticTableviewCellViewModel *vm3 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm3.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm3.leftTitle = @"字体变小变红";
+    vm3.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm3.indicatorLeftTitle = @"王者荣耀!";
+    
+    SJStaticTableviewSectionViewModel *section3 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm3]];
+    section3.leftLabelTextFont = [UIFont systemFontOfSize:8];
+    section3.leftLabelTextColor = [UIColor redColor];
+    
+    
+    SJStaticTableviewCellViewModel *vm4 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm4.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm4.leftTitle = @"左侧两个控件距离变大";
+    vm4.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm4.indicatorLeftTitle = @"王者荣耀!";
+    
+    SJStaticTableviewSectionViewModel *section4 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm4]];
+    section4.leftImageAndLabelGap = 20;
+    
+    
+    SJStaticTableviewCellViewModel *vm5 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm5.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm5.leftTitle = @"右侧图片变小";
+    vm5.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm5.indicatorLeftTitle = @"王者荣耀!";
+    
+    SJStaticTableviewSectionViewModel *section5 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm5]];
+    section5.indicatorLeftImageSize = CGSizeMake(15, 15);
+    
+    
+    SJStaticTableviewCellViewModel *vm6= [[SJStaticTableviewCellViewModel alloc] init];
+    vm6.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm6.leftTitle = @"右侧字体变大变蓝";
+    vm6.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm6.indicatorLeftTitle = @"王者荣耀!";
+    
+    SJStaticTableviewSectionViewModel *section6 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm6]];
+    section6.indicatorLeftLabelTextFont = [UIFont systemFontOfSize:18];
+    section6.indicatorLeftLabelTextColor = [UIColor blueColor];
+    
+    
+    SJStaticTableviewCellViewModel *vm7= [[SJStaticTableviewCellViewModel alloc] init];
+    vm7.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm7.leftTitle = @"右侧两个控件距离变大";
+    vm7.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm7.indicatorLeftTitle = @"王者荣耀!";
+    
+    SJStaticTableviewSectionViewModel *section7 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm7]];
+    section7.indicatorLeftImageAndLabelGap = 18;
+    
+    
+    return @[section1,section2,section3,section4,section5,section6,section7];
+    
+}
 
++ (NSArray *)customCellsOneSectionPageData
+{
+    //默认配置
+    SJStaticTableviewCellViewModel *vm1 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm1.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm1.leftTitle = @"全部默认配置，用于对照";
+    vm1.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm1.indicatorLeftTitle = @"王者荣耀!";
+    
+    
+    SJStaticTableviewCellViewModel *vm2 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm2.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm2.leftTitle = @"左侧图片变小";
+    vm2.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm2.indicatorLeftTitle = @"王者荣耀!";
+    vm2.leftImageSize = CGSizeMake(20, 20);
+    
+    
+    SJStaticTableviewCellViewModel *vm3 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm3.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm3.leftTitle = @"字体变小变红";
+    vm3.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm3.indicatorLeftTitle = @"王者荣耀!";
+    vm3.leftLabelTextFont = [UIFont systemFontOfSize:8];
+    vm3.leftLabelTextColor = [UIColor redColor];
+    
+    
+    
+    SJStaticTableviewCellViewModel *vm4 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm4.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm4.leftTitle = @"左侧两个控件距离变大";
+    vm4.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm4.indicatorLeftTitle = @"王者荣耀!";
+    vm4.leftImageAndLabelGap = 20;
+    
+    
+    SJStaticTableviewCellViewModel *vm5 = [[SJStaticTableviewCellViewModel alloc] init];
+    vm5.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm5.leftTitle = @"右侧图片变小";
+    vm5.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm5.indicatorLeftTitle = @"王者荣耀!";
+    vm5.indicatorLeftImageSize = CGSizeMake(15, 15);
+    
+    
+    
+    SJStaticTableviewCellViewModel *vm6= [[SJStaticTableviewCellViewModel alloc] init];
+    vm6.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm6.leftTitle = @"右侧字体变大变蓝";
+    vm6.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm6.indicatorLeftTitle = @"王者荣耀!";
+    vm6.indicatorLeftLabelTextFont = [UIFont systemFontOfSize:18];
+    vm6.indicatorLeftLabelTextColor = [UIColor blueColor];
+    
+    
+    
+    SJStaticTableviewCellViewModel *vm7= [[SJStaticTableviewCellViewModel alloc] init];
+    vm7.leftImage = [UIImage imageNamed:@"MoreGame"];
+    vm7.leftTitle = @"右侧两个控件距离变大";
+    vm7.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
+    vm7.indicatorLeftTitle = @"王者荣耀!";
+    vm7.indicatorLeftImageAndLabelGap = 18;
+    
+    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm1,vm2,vm3,vm4,vm5,vm6,vm7]];
+    
+    return @[section1];
+}
 
 @end
