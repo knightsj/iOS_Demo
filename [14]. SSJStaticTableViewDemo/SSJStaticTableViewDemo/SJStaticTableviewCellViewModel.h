@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger, SSJStaticCellType) {
     
 };
 
+
 typedef void(^SwitchValueChagedBlock)(BOOL isOn);           //switch开关切换时调用的block
 
 
@@ -32,7 +33,7 @@ typedef void(^SwitchValueChagedBlock)(BOOL isOn);           //switch开关切换
 
 
 @property (nonatomic, copy)   NSString *cellID;                                  //cell reuser identifier
-@property (nonatomic, assign) NSInteger identifier;                              //区别每个cell
+@property (nonatomic, assign) NSInteger identifier;                              //区别每个cell，用于点击
 
 // =============== 系统默认cell左侧 =============== //
 @property (nonatomic, strong) UIImage  *leftImage;                               //左侧的image，按需传入
@@ -54,18 +55,15 @@ typedef void(^SwitchValueChagedBlock)(BOOL isOn);           //switch开关切换
 
 @property (nonatomic, assign, readonly)  BOOL hasIndicatorImageAndLabel;         //右侧尖头左侧的文本和image是否同时存在，只能通过内部计算
 
-@property (nonatomic, assign) CGFloat indicatorLeftImageAndLabelGap;                      //右侧尖头左侧image和label的距离，存在默认值
+@property (nonatomic, assign) CGFloat indicatorLeftImageAndLabelGap;             //右侧尖头左侧image和label的距离，存在默认值
 @property (nonatomic, assign) BOOL isImageFirst;                                 //右侧尖头左侧的文本和image同时存在时，是否是image挨着箭头，默认为YES
 @property (nonatomic, copy) SwitchValueChagedBlock switchValueDidChangeBlock;    //切换switch开关的时候调用的block
 
 
 // =============== 长宽数据 =============== //
 @property (nonatomic, assign) CGFloat cellHeight;                                //cell高度,默认是44，可以设置
-@property (nonatomic, assign) CGSize  leftTitleLabelSize;              //左侧默认Label的size，传入text以后内部计算
-
-@property (nonatomic, assign) CGSize  indicatorLeftLabelSize;          //右侧label的size
-
-
+@property (nonatomic, assign) CGSize  leftTitleLabelSize;                        //左侧默认Label的size，传入text以后内部计算
+@property (nonatomic, assign) CGSize  indicatorLeftLabelSize;                    //右侧label的size
 
 
 // =============== 自定义cell的数据放在这里 =============== //

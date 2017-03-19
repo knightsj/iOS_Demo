@@ -28,6 +28,7 @@
         _cellID = @"defaultCell";
         _staticCellType = SSJStaticCellTypeSystemAccessoryDisclosureIndicator;//默认是存在三角箭头的cell
         _isImageFirst = YES;
+        
         //都是默认配置
         _leftLabelTextFont = SJLeftTitleTextFont;
         _leftLabelTextColor = SJLeftTitleTextColor;
@@ -93,6 +94,7 @@
         }
     }
 }
+
 
 - (void)setIndicatorLeftImage:(UIImage *)indicatorLeftImage
 {

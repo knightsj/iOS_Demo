@@ -6,18 +6,13 @@
 //  Copyright © 2017年 Shijie. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "SJStaticTableView.h"
-#import "SJStaticTableViewCell+AccessoryDisclosureIndicator.h"
-#import "SJStaticTableviewCellViewModel.h"
-#import "SJStaticTableviewSectionViewModel.h"
 
-
+#import "SJStaticTableViewHeader.h"
 
 @protocol SJStaticTableViewControllerDelegate <NSObject>
 
+@required
 - (void)createDataSource;
-
 @end
 
 @interface SJStaticTableViewController : UIViewController<SJStaticTableViewControllerDelegate,SJStaticTableViewDelegate>
