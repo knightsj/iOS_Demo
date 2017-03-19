@@ -1,18 +1,18 @@
 //
-//  SSJStaticTableViewDemoUITests.m
-//  SSJStaticTableViewDemoUITests
+//  SJStaticTableViewDemoUITests.m
+//  SJStaticTableViewDemoUITests
 //
-//  Created by Sun Shijie on 2017/3/14.
+//  Created by Sun Shijie on 2017/3/19.
 //  Copyright © 2017年 Shijie. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface SSJStaticTableViewDemoUITests : XCTestCase
+@interface SJStaticTableViewDemoUITests : XCTestCase
 
 @end
 
-@implementation SSJStaticTableViewDemoUITests
+@implementation SJStaticTableViewDemoUITests
 
 - (void)setUp {
     [super setUp];

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB6B9B071E77AD4B004C998D"
-               BuildableName = "SSJStaticTableViewDemo.app"
-               BlueprintName = "SSJStaticTableViewDemo"
-               ReferencedContainer = "container:SSJStaticTableViewDemo.xcodeproj">
+               BlueprintIdentifier = "CBC2D26E1E7ED0BD002A5357"
+               BuildableName = "SJStaticTableViewDemo.app"
+               BlueprintName = "SJStaticTableViewDemo"
+               ReferencedContainer = "container:SJStaticTableViewDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB6B9B201E77AD4B004C998D"
-               BuildableName = "SSJStaticTableViewDemoTests.xctest"
-               BlueprintName = "SSJStaticTableViewDemoTests"
-               ReferencedContainer = "container:SSJStaticTableViewDemo.xcodeproj">
+               BlueprintIdentifier = "CBC2D2871E7ED0BD002A5357"
+               BuildableName = "SJStaticTableViewDemoTests.xctest"
+               BlueprintName = "SJStaticTableViewDemoTests"
+               ReferencedContainer = "container:SJStaticTableViewDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB6B9B2B1E77AD4B004C998D"
-               BuildableName = "SSJStaticTableViewDemoUITests.xctest"
-               BlueprintName = "SSJStaticTableViewDemoUITests"
-               ReferencedContainer = "container:SSJStaticTableViewDemo.xcodeproj">
+               BlueprintIdentifier = "CBC2D2921E7ED0BD002A5357"
+               BuildableName = "SJStaticTableViewDemoUITests.xctest"
+               BlueprintName = "SJStaticTableViewDemoUITests"
+               ReferencedContainer = "container:SJStaticTableViewDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB6B9B071E77AD4B004C998D"
-            BuildableName = "SSJStaticTableViewDemo.app"
-            BlueprintName = "SSJStaticTableViewDemo"
-            ReferencedContainer = "container:SSJStaticTableViewDemo.xcodeproj">
+            BlueprintIdentifier = "CBC2D26E1E7ED0BD002A5357"
+            BuildableName = "SJStaticTableViewDemo.app"
+            BlueprintName = "SJStaticTableViewDemo"
+            ReferencedContainer = "container:SJStaticTableViewDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB6B9B071E77AD4B004C998D"
-            BuildableName = "SSJStaticTableViewDemo.app"
-            BlueprintName = "SSJStaticTableViewDemo"
-            ReferencedContainer = "container:SSJStaticTableViewDemo.xcodeproj">
+            BlueprintIdentifier = "CBC2D26E1E7ED0BD002A5357"
+            BuildableName = "SJStaticTableViewDemo.app"
+            BlueprintName = "SJStaticTableViewDemo"
+            ReferencedContainer = "container:SJStaticTableViewDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB6B9B071E77AD4B004C998D"
-            BuildableName = "SSJStaticTableViewDemo.app"
-            BlueprintName = "SSJStaticTableViewDemo"
-            ReferencedContainer = "container:SSJStaticTableViewDemo.xcodeproj">
+            BlueprintIdentifier = "CBC2D26E1E7ED0BD002A5357"
+            BuildableName = "SJStaticTableViewDemo.app"
+            BlueprintName = "SJStaticTableViewDemo"
+            ReferencedContainer = "container:SJStaticTableViewDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

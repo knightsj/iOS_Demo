@@ -1,8 +1,8 @@
 //
 //  main.m
-//  SSJStaticTableViewDemo
+//  SJStaticTableViewDemo
 //
-//  Created by Sun Shijie on 2017/3/14.
+//  Created by Sun Shijie on 2017/3/19.
 //  Copyright © 2017年 Shijie. All rights reserved.
 //
 

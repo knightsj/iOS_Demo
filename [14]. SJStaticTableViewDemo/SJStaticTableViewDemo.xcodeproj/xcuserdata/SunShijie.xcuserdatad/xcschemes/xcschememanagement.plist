@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>SSJStaticTableViewDemo.xcscheme</key>
+		<key>SJStaticTableViewDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>CB6B9B071E77AD4B004C998D</key>
+		<key>CBC2D26E1E7ED0BD002A5357</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB6B9B201E77AD4B004C998D</key>
+		<key>CBC2D2871E7ED0BD002A5357</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB6B9B2B1E77AD4B004C998D</key>
+		<key>CBC2D2921E7ED0BD002A5357</key>
 		<dict>
 			<key>primary</key>
 			<true/>

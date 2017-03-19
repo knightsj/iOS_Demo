@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  SSJStaticTableViewDemo
+//  SJStaticTableViewDemo
 //
-//  Created by Sun Shijie on 2017/3/14.
+//  Created by Sun Shijie on 2017/3/19.
 //  Copyright © 2017年 Shijie. All rights reserved.
 //
 
@@ -17,7 +17,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[SJTabBarController alloc]init];
     self.window.backgroundColor = [UIColor whiteColor];
