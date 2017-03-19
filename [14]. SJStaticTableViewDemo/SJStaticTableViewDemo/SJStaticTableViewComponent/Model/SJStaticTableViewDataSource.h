@@ -24,7 +24,7 @@
 @end
 
 
-typedef void(^SJStaticCellConfigureBlock)(SJStaticTableViewCell *cell, id viewModel);
+typedef void(^SJStaticCellConfigureBlock)(SJStaticTableViewCell *cell, SJStaticTableviewCellViewModel * viewModel);
 
 
 @interface SJStaticTableViewDataSource : NSObject<SJStaticTableViewDataSource>

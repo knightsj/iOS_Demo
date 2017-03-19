@@ -10,11 +10,6 @@
 #import "SJCustomCellsViewController.h"
 #import "SJCustomCellsOneSectionViewController.h"
 
-#import "SJStaticTableViewCell+Logout.h"
-#import "SJStaticTableViewCell+AccessorySwitch.h"
-#import "SJStaticTableViewCell+AccessoryNone.h"
-
-
 
 @interface SJSettingViewController ()
 

@@ -27,7 +27,7 @@
     vm0.codeImage = [UIImage imageNamed:@"qrcode"];
     vm0.staticCellType = SSJStaticCellTypeMeAvatar;
     
-    SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm0]];
+    SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm0]];
     
     
     
@@ -55,7 +55,7 @@
     vm4.identifier = 4;
   
     
-    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm1,vm2,vm3,vm4]];
+    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm1,vm2,vm3,vm4]];
     
     // ========== section 2
     SJStaticTableviewCellViewModel *vm5 = [[SJStaticTableviewCellViewModel alloc] init];
@@ -64,7 +64,7 @@
     vm5.identifier = 5;
     
     
-    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray: @[vm5]];
+    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray: @[vm5]];
     
     
     // ========== section 3
@@ -74,7 +74,7 @@
     vm6.identifier = 7;
     
     
-    SJStaticTableviewSectionViewModel *section3 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm6]];
+    SJStaticTableviewSectionViewModel *section3 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm6]];
     
     return @[section0,section1,section2,section3];
 }
@@ -90,7 +90,7 @@
     vm0.indicatorLeftImage = [UIImage imageNamed:@"ProfileLockOn"];
     vm0.isImageFirst = NO;
     
-    SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm0]];
+    SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm0]];
     
     
     // ========== section 1
@@ -123,7 +123,7 @@
     vm3.identifier = 3;
     
     
-    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm1,vm7,vm8,vm2,vm3]];
+    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm1,vm7,vm8,vm2,vm3]];
     
     // ========== section 2
     SJStaticTableviewCellViewModel *vm4 = [[SJStaticTableviewCellViewModel alloc] init];
@@ -134,7 +134,7 @@
     vm5.leftTitle = @"关于微信";
     vm5.identifier = 5;
     
-    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm4,vm5]];
+    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm4,vm5]];
     
     SJStaticTableviewCellViewModel *vm9 = [[SJStaticTableviewCellViewModel alloc] init];
     vm9.leftTitle = @"定制性cell展示页面 - 分组";
@@ -144,7 +144,7 @@
     vm10.leftTitle = @"定制性cell展示页面 - 同组";
     vm10.identifier = 10;
     
-    SJStaticTableviewSectionViewModel *section4 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm9,vm10]];
+    SJStaticTableviewSectionViewModel *section4 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm9,vm10]];
     
     
     // ========== section 3
@@ -154,7 +154,7 @@
     vm6.identifier = 6;
     
     
-    SJStaticTableviewSectionViewModel *section3 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm6]];
+    SJStaticTableviewSectionViewModel *section3 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm6]];
     
     return @[section0,section1,section2,section4,section3];
 }
@@ -188,7 +188,7 @@
     vm4.leftTitle = @"我的地址";
     vm4.identifier = 4;
     
-    SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm0,vm1,vm2,vm3,vm4]];
+    SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm0,vm1,vm2,vm3,vm4]];
     
     // ========== section 1
     SJStaticTableviewCellViewModel *vm5 = [[SJStaticTableviewCellViewModel alloc] init];
@@ -206,7 +206,7 @@
     vm7.indicatorLeftTitle = @"good good study";
     vm7.identifier = 7;
     
-    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm5,vm6,vm7]];
+    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm5,vm6,vm7]];
     
     
     // ========== section 2
@@ -215,7 +215,7 @@
     vm8.indicatorLeftTitle = @"展示";
     vm8.identifier = 8;
     
-    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm8]];
+    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm8]];
     
      return @[section0,section1,section2];
     
@@ -230,7 +230,7 @@
     vm0.indicatorLeftImage = [UIImage imageNamed:@"avatar"];
     vm0.identifier = 0;
     
-    SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray: @[vm0]];
+    SJStaticTableviewSectionViewModel *section0 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray: @[vm0]];
     
     
     // ========== section 1
@@ -245,7 +245,7 @@
     vm2.identifier = 2;
     
     
-    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm1,vm2]];
+    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm1,vm2]];
     
     
     SJStaticTableviewCellViewModel *vm3 = [[SJStaticTableviewCellViewModel alloc] init];
@@ -260,7 +260,7 @@
     vm4.identifier = 4;
     
     
-    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm3,vm4]];
+    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm3,vm4]];
     
     
     // ========== section 2
@@ -279,7 +279,7 @@
     vm6.identifier = 7;
     
     
-    SJStaticTableviewSectionViewModel *section3 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm5,vm6]];
+    SJStaticTableviewSectionViewModel *section3 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm5,vm6]];
     
     return @[section0,section1,section2,section3];
 }
@@ -293,7 +293,7 @@
     vm1.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
     vm1.indicatorLeftTitle = @"王者荣耀!";
     
-    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm1]];
+    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm1]];
     
     SJStaticTableviewCellViewModel *vm2 = [[SJStaticTableviewCellViewModel alloc] init];
     vm2.leftImage = [UIImage imageNamed:@"MoreGame"];
@@ -301,7 +301,7 @@
     vm2.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
     vm2.indicatorLeftTitle = @"王者荣耀!";
     
-    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm2]];
+    SJStaticTableviewSectionViewModel *section2 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm2]];
     section2.leftImageSize = CGSizeMake(20, 20);
     
     SJStaticTableviewCellViewModel *vm3 = [[SJStaticTableviewCellViewModel alloc] init];
@@ -310,7 +310,7 @@
     vm3.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
     vm3.indicatorLeftTitle = @"王者荣耀!";
     
-    SJStaticTableviewSectionViewModel *section3 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm3]];
+    SJStaticTableviewSectionViewModel *section3 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm3]];
     section3.leftLabelTextFont = [UIFont systemFontOfSize:8];
     section3.leftLabelTextColor = [UIColor redColor];
     
@@ -321,7 +321,7 @@
     vm4.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
     vm4.indicatorLeftTitle = @"王者荣耀!";
     
-    SJStaticTableviewSectionViewModel *section4 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm4]];
+    SJStaticTableviewSectionViewModel *section4 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm4]];
     section4.leftImageAndLabelGap = 20;
     
     
@@ -331,7 +331,7 @@
     vm5.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
     vm5.indicatorLeftTitle = @"王者荣耀!";
     
-    SJStaticTableviewSectionViewModel *section5 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm5]];
+    SJStaticTableviewSectionViewModel *section5 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm5]];
     section5.indicatorLeftImageSize = CGSizeMake(15, 15);
     
     
@@ -341,7 +341,7 @@
     vm6.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
     vm6.indicatorLeftTitle = @"王者荣耀!";
     
-    SJStaticTableviewSectionViewModel *section6 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm6]];
+    SJStaticTableviewSectionViewModel *section6 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm6]];
     section6.indicatorLeftLabelTextFont = [UIFont systemFontOfSize:18];
     section6.indicatorLeftLabelTextColor = [UIColor blueColor];
     
@@ -352,7 +352,7 @@
     vm7.indicatorLeftImage = [UIImage imageNamed:@"wzry"];
     vm7.indicatorLeftTitle = @"王者荣耀!";
     
-    SJStaticTableviewSectionViewModel *section7 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm7]];
+    SJStaticTableviewSectionViewModel *section7 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm7]];
     section7.indicatorLeftImageAndLabelGap = 18;
     
     
@@ -422,7 +422,7 @@
     vm7.indicatorLeftTitle = @"王者荣耀!";
     vm7.indicatorLeftImageAndLabelGap = 18;
     
-    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithcellViewModelsArray:@[vm1,vm2,vm3,vm4,vm5,vm6,vm7]];
+    SJStaticTableviewSectionViewModel *section1 = [[SJStaticTableviewSectionViewModel alloc] initWithCellViewModelsArray:@[vm1,vm2,vm3,vm4,vm5,vm6,vm7]];
     
     return @[section1];
 }

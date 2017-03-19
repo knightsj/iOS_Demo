@@ -113,29 +113,29 @@
     return _indicatorLeftLabel;
 }
 
-- (UIImageView *)indicatorImageView
+- (UIImageView *)indicatorLeftImageView
 {
-    if (!_indicatorImageView) {
-         _indicatorImageView = [[UIImageView alloc] initWithImage:_viewModel.indicatorLeftImage];
+    if (!_indicatorLeftImageView) {
+         _indicatorLeftImageView = [[UIImageView alloc] initWithImage:_viewModel.indicatorLeftImage];
         
         if (!_viewModel.hasIndicatorImageAndLabel) {
-            _indicatorImageView.frame = CGRectMake(_indicatorArrow.frame.origin.x - SJLeftGap - _viewModel.indicatorLeftImageSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftImageSize.height)/2, _viewModel.indicatorLeftImageSize.width , _viewModel.indicatorLeftImageSize.height);
+            _indicatorLeftImageView.frame = CGRectMake(_indicatorArrow.frame.origin.x - SJLeftGap - _viewModel.indicatorLeftImageSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftImageSize.height)/2, _viewModel.indicatorLeftImageSize.width , _viewModel.indicatorLeftImageSize.height);
         }else{
             
             if (_viewModel.isImageFirst) {
                 
-                _indicatorImageView.frame = CGRectMake(SJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - SJLeftGap - _viewModel.indicatorLeftImageSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftImageSize.height)/2, _viewModel.indicatorLeftImageSize.width, _viewModel.indicatorLeftImageSize.height);
+                _indicatorLeftImageView.frame = CGRectMake(SJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - SJLeftGap - _viewModel.indicatorLeftImageSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftImageSize.height)/2, _viewModel.indicatorLeftImageSize.width, _viewModel.indicatorLeftImageSize.height);
                 
             }else{
                 
-                _indicatorImageView.frame = CGRectMake(SJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - _viewModel.indicatorLeftImageAndLabelGap - _viewModel.indicatorLeftLabelSize.width - SJLeftGap - _viewModel.indicatorLeftImageSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftImageSize.height)/2, _viewModel.indicatorLeftImageSize.width,_viewModel.indicatorLeftImageSize.height);
+                _indicatorLeftImageView.frame = CGRectMake(SJScreenWidth - SJLeftGap - _indicatorArrow.bounds.size.width - _viewModel.indicatorLeftImageAndLabelGap - _viewModel.indicatorLeftLabelSize.width - SJLeftGap - _viewModel.indicatorLeftImageSize.width, (_viewModel.cellHeight - _viewModel.indicatorLeftImageSize.height)/2, _viewModel.indicatorLeftImageSize.width,_viewModel.indicatorLeftImageSize.height);
                 
             }
 
         }
         
     }
-    return _indicatorImageView;
+    return _indicatorLeftImageView;
 }
 
 

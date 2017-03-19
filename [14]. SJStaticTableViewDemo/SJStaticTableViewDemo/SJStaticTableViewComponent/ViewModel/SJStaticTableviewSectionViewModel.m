@@ -12,7 +12,7 @@
 
 @implementation SJStaticTableviewSectionViewModel
 
-- (instancetype)initWithcellViewModelsArray:(NSArray *)cellViewModelsArray
+- (instancetype)initWithCellViewModelsArray:(NSArray *)cellViewModelsArray
 {
     self = [super init];
     if (self) {
