@@ -195,9 +195,7 @@ UIView *subview = [[NSBundle mainBundle] loadNibNamed:@"subview" owner:nil optio
 subview.autoresizingMask = UIViewAutoresizingNone;
 ```
 
-## [14]. SSJStaticTableViewDemo
-用于设置页，个人信息页等静态表格的快速开发框架
 
-## [15].block_lowlevel_analysis
+## [14].block_lowlevel_analysis
 block的底层分析
 
