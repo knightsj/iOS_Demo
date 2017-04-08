@@ -23,58 +23,11 @@
 //    [self dispatch_after];
 //    [self dispatch_group];
 //    [self dispatch_wait_3];
-//      [self dispatch_barrier];
+//    [self dispatch_barrier];
 //    [self dispatch_sync_4];
 //    [self dispatch_apply_3];
-      [self dispatch_once_1];
+//    [self dispatch_once_1];
 }
-
-- (void)mainQueue
-{
-    dispatch_queue_t queue = dispatch_get_main_queue();
-    dispatch_async(queue, ^{
-        NSLog(@"主线程任务");
-    });
-}
-
-- (void)dispatch_io
-{
-//    pipe_q = dispatch_queue_create("PipeQ",NULL);
-//    pipe_channel = dispatch_io_create(DISPATCH_IO_STREAM,fd,pipe_q,^(int err){
-//        close(fd);
-//    });
-//    
-//    *out_fd = fdpair[i];
-//    
-//    dispatch_io_set_low_water(pipe_channel,SIZE_MAX);
-//    
-//    dispatch_io_read(pipe_channel,0,SIZE_MAX,pipe_q, ^(bool done,dispatch_data_t pipe data,int err){
-//        if(err == 0)
-//        {
-//            size_t len = dispatch_data_get_size(pipe data);
-//            if(len > 0)
-//            {
-//                const char *bytes = NULL;
-//                char *encoded;
-//                
-//                dispatch_data_t md = dispatch_data_create_map(pipe data,(const void **)&bytes,&len);
-//                asl_set((aslmsg)merged_msg,ASL_KEY_AUX_DATA,encoded);
-//                free(encoded);
-//                _asl_send_message(NULL,merged_msg,-1,NULL);
-//                asl_msg_release(merged_msg);
-//                dispatch_release(md);
-//            }
-//        }
-//        
-//        if(done)
-//        {
-//            dispatch_semaphore_signal(sem);
-//            dispatch_release(pipe_channel);
-//            dispatch_release(pipe_q);
-//        }
-//    });
-}
-
 
 - (void)dispatch_once_1
 {
@@ -86,7 +39,6 @@
         });
     }
 }
-
 
 - (void)onceCode
 {
@@ -193,7 +145,7 @@
 {
     //死锁2
     NSLog(@"任务1");
-    dispatch_queue_t queue = dispatch_get_main_queue();
+    dispatch_queue_t queue = dispatch_queue_create("dead lock queue", NULL);
     dispatch_async(queue, ^{
         NSLog(@"任务2");
         dispatch_sync(queue, ^{
@@ -425,7 +377,7 @@
 
 - (void)serialQueue
 {
-    dispatch_queue_t queue = dispatch_queue_create("serial queue", NULL);
+    dispatch_queue_t queue = dispatch_queue_create("serial queue", DISPATCH_QUEUE_SERIAL);
     for (NSInteger index = 0; index < 10; index ++) {
         dispatch_async(queue, ^{
             NSLog(@"task index %ld in serial queue",index);
@@ -448,19 +400,13 @@
 {
     for (NSInteger index = 0; index < 10; index ++) {
         
-        dispatch_queue_t queue = dispatch_queue_create("serial queue 1", NULL);
+        dispatch_queue_t queue = dispatch_queue_create("different serial queue", NULL);
         dispatch_async(queue, ^{
             NSLog(@"serial queue index : %ld",index);
         });
-        
     }
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 
 @end
