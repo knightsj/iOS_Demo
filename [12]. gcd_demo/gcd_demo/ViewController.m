@@ -15,7 +15,9 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
 //    [self serialQueue];
 //    [self concurrentQueue];
 //    [self multiSerialQueue];
@@ -29,8 +31,10 @@
 //    [self dispatch_once_1];
 }
 
+//一次的代码
 - (void)dispatch_once_1
 {
+    
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     for (NSInteger index = 0; index < 5; index++) {
         
@@ -48,6 +52,7 @@
     });
 }
 
+//简单重复调用
 - (void)dispatch_apply_1
 {
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -57,6 +62,7 @@
     NSLog(@"完毕");
 }
 
+//遍历数组
 - (void)dispatch_apply_2
 {
     NSArray *array = @[@1,@10,@43,@13,@33];
@@ -67,6 +73,7 @@
     NSLog(@"完毕");
 }
 
+//异步遍历
 - (void)dispatch_apply_3
 {
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -89,6 +96,7 @@
     });
 }
 
+//同步阻塞
 - (void)dispatch_sync_1
 {
     //同步处理
@@ -109,6 +117,7 @@
     NSLog(@"%@",[NSThread currentThread]);
 }
 
+//异步
 - (void)dispatch_sync_2
 {
     //异步处理
@@ -129,9 +138,9 @@
     NSLog(@"%@",[NSThread currentThread]);
 }
 
+//死锁1
 - (void)dispatch_sync_3
 {
-    //死锁1
     NSLog(@"任务1");
     dispatch_queue_t queue = dispatch_get_main_queue();
     dispatch_sync(queue, ^{
@@ -141,9 +150,9 @@
     NSLog(@"任务3");
 }
 
+//死锁2
 - (void)dispatch_sync_4
 {
-    //死锁2
     NSLog(@"任务1");
     dispatch_queue_t queue = dispatch_queue_create("dead lock queue", NULL);
     dispatch_async(queue, ^{
@@ -157,6 +166,7 @@
     NSLog(@"任务4");
 }
 
+//开会签合同例子
 - (void)dispatch_barrier
 {
     dispatch_queue_t meetingQueue = dispatch_queue_create("com.meeting.queue", DISPATCH_QUEUE_CONCURRENT);
@@ -199,10 +209,10 @@
     
 }
 
-
+//没有超时
 - (void)dispatch_wait_1
 {
-    //没有超时
+    
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     for (NSInteger index = 0; index < 5; index ++) {
@@ -227,9 +237,9 @@
     
 }
 
+//超时
 - (void)dispatch_wait_2
 {
-    //超时
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     for (NSInteger index = 0; index < 5; index ++) {
@@ -254,9 +264,9 @@
     
 }
 
+//超时时间为：DISPATCH_TIME_NOW：无超时时间
 - (void)dispatch_wait_3
 {
-    //超时时间为：DISPATCH_TIME_NOW：无超时时间
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     for (NSInteger index = 0; index < 5; index ++) {
@@ -280,6 +290,7 @@
     
 }
 
+//group
 - (void)dispatch_group
 {
     dispatch_group_t group = dispatch_group_create();
@@ -295,6 +306,7 @@
     });
 }
 
+//推迟追加队列
 - (void)dispatch_after
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -302,6 +314,7 @@
     });
 }
 
+//target
 - (void)setTargetQueue_1
 {
     //需求：生成一个后台的串行队列
@@ -355,47 +368,7 @@
     
 }
 
-
-
-
-
-- (void)globalQueue
-{
-    //低优先级
-    dispatch_queue_t queue_1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
-    
-    //默认优先级
-    dispatch_queue_t queue_2 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    
-    //高优先级
-    dispatch_queue_t queue_3 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-    
-    //后台优先级
-    dispatch_queue_t queue_4 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
-    
-}
-
-- (void)serialQueue
-{
-    dispatch_queue_t queue = dispatch_queue_create("serial queue", DISPATCH_QUEUE_SERIAL);
-    for (NSInteger index = 0; index < 10; index ++) {
-        dispatch_async(queue, ^{
-            NSLog(@"task index %ld in serial queue",index);
-        });
-    }
-}
-
-- (void)concurrentQueue
-{
-    dispatch_queue_t queue = dispatch_queue_create("concurrent queue", DISPATCH_QUEUE_CONCURRENT);
-    for (NSInteger index = 0; index < 10; index ++) {
-        dispatch_async(queue, ^{
-            NSLog(@"task index %ld in concurrent queue",index);
-        });
-    }
-}
-
-
+//多个串行队列队列，多个线程
 - (void)multiSerialQueue
 {
     for (NSInteger index = 0; index < 10; index ++) {
@@ -407,6 +380,28 @@
     }
 }
 
+
+//并行
+- (void)concurrentQueue
+{
+    dispatch_queue_t queue = dispatch_queue_create("concurrent queue", DISPATCH_QUEUE_CONCURRENT);
+    for (NSInteger index = 0; index < 10; index ++) {
+        dispatch_async(queue, ^{
+            NSLog(@"task index %ld in concurrent queue",index);
+        });
+    }
+}
+
+//串行
+- (void)serialQueue
+{
+    dispatch_queue_t queue = dispatch_queue_create("serial queue", DISPATCH_QUEUE_SERIAL);
+    for (NSInteger index = 0; index < 10; index ++) {
+        dispatch_async(queue, ^{
+            NSLog(@"task index %ld in serial queue",index);
+        });
+    }
+}
 
 
 @end
