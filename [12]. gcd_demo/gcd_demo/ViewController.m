@@ -23,7 +23,7 @@
 //    [self multiSerialQueue];
 //    [self setTargetQueue_3];
 //    [self dispatch_after];
-//    [self dispatch_group];
+    [self dispatch_group];
 //    [self dispatch_wait_3];
 //    [self dispatch_barrier];
 //    [self dispatch_sync_4];
@@ -215,6 +215,7 @@
     
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
     for (NSInteger index = 0; index < 5; index ++) {
         dispatch_group_async(group, queue, ^{
             for (NSInteger i = 0; i< 100000000; i ++) {
@@ -294,16 +295,20 @@
 - (void)dispatch_group
 {
     dispatch_group_t group = dispatch_group_create();
+    
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_group_notify(group, queue, ^{
+        NSLog(@"最后的任务");
+    });
+    
     for (NSInteger index = 0; index < 5; index ++) {
         dispatch_group_async(group, queue, ^{
             NSLog(@"任务%ld",index);
         });
     }
     
-    dispatch_group_notify(group, queue, ^{
-        NSLog(@"最后的任务");
-    });
+    
 }
 
 //推迟追加队列
