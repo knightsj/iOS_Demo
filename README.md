@@ -202,4 +202,7 @@ block的底层分析
 ## [15].method_swizzling
 使用runtime交换方法（类方法，实例方法）
 
+## [16]. kvo_array_count
+使用runtime交换方法来同志array count是否变化（未完成）
+
 
