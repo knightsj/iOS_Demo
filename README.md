@@ -205,4 +205,28 @@ block的底层分析
 ## [16]. kvo_array_count
 使用runtime交换方法来同志array count是否变化（未完成）
 
+## [17]. class_addMethod_demo
+给类添加方法：避免在运行时收到某个没有实现的方法。
+```objc
+#import "Car+Fly.h"
+#import <objc/runtime.h>
+
+void beginToFly(id self, SEL _cmd) {
+    NSLog(@"begin to fly");
+}
+
+
+@implementation Car (Fly)
+
++ (BOOL)resolveInstanceMethod:(SEL)sel {
+    //如果是fly方法，目前没有这个方法的实现，于是就添加一个fly方法
+    if (sel == @selector(fly)) {
+        class_addMethod([self class], sel, (IMP)beginToFly, "v@:");
+        return YES;
+    }
+    return [super resolveInstanceMethod:sel];
+}
+@end
+```
+
 
