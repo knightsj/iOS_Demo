@@ -202,6 +202,68 @@ block的底层分析
 ## [15].method_swizzling
 使用runtime交换方法（类方法，实例方法）
 
+
+交换类方法：
+```objc
++ (void)load {
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        SEL originalSelector = @selector(imageNamed:);
+        SEL swizzledSelector = @selector(sj_imageNamed:);
+        
+        Method originalMethod = class_getClassMethod(self, originalSelector);
+        Method swizzledMethod = class_getClassMethod(self, swizzledSelector);
+        
+        //交换实现
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    });
+}
+
++ (UIImage *)sj_imageNamed:(NSString *)name
+{
+
+    UIImage *image = [UIImage sj_imageNamed:name];
+    
+    if (image) {
+        NSLog(@"图片加载成功");
+    } else {
+        NSLog(@"图片加载失败");
+    }
+    
+    return image;
+}
+```
+
+
+交换实例方法：
+```objc
++ (void)load {
+    
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        
+        Class class = [self class];
+        
+        SEL originalSelector = @selector(viewWillAppear:);
+        SEL swizzledSelector = @selector(sj_viewWillAppear:);
+        
+        Method originalMethod = class_getInstanceMethod(class, originalSelector);
+        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+        
+        //交换实现
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    });
+}
+
+- (void)sj_viewWillAppear:(BOOL)animated {
+    [self sj_viewWillAppear:animated];
+    NSLog(@"viewWillAppear: %@", self);
+}
+```
+
 ## [16]. kvo_array_count
 使用runtime交换方法来同志array count是否变化（未完成）
 
