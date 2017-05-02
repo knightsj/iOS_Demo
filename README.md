@@ -291,7 +291,7 @@ void beginToFly(id self, SEL _cmd) {
 @end
 ```
 
-## [19]. kvc_demo
+## [18]. kvc_demo
 
 使用kvc访问共有属性，私有属性，keypath，集合操作等。
 ```objc
