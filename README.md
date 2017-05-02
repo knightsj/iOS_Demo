@@ -291,4 +291,52 @@ void beginToFly(id self, SEL _cmd) {
 @end
 ```
 
+## [19]. kvc_demo
+
+使用kvc访问共有属性，私有属性，keypath，集合操作等。
+```objc
+//set public ivar
+    [person setValue:@"Peter" forKey:@"name"];
+    NSLog(@"name:%@",person.name);
+    
+    //set public _ivar
+    [person setValue:@"male" forKey:@"_sex"];
+    NSLog(@"sex:%@",[person valueForKey:@"_sex"]);
+    
+    //set privacy ivar
+    [person setValue:@"centry road" forKey:@"address"];
+    NSLog(@"address: %@",[person valueForKey:@"address"]);
+    
+    //set privacy _ivar
+    [person setValue:@"China" forKey:@"_country"];
+    NSLog(@"country: %@",[person valueForKey:@"_country"]);
+    
+    //set primary type
+    [person setValue:[NSNumber numberWithInteger:12] forKey:@"money"];
+    NSLog(@"set money: %ld",person.money);
+    NSLog(@"query money: %@",[person valueForKey:@"money"]);
+    
+    //set keypath
+    [person setValue:@"Apple" forKeyPath:@"company.name"];
+    NSLog(@"name of company: %@",[person valueForKeyPath:@"company.name"]);
+    
+    //collection
+    person.friends = @[@"Jim",@"Brunce",@"Nancy"];
+    NSNumber *count = [person valueForKeyPath: @"friends.@count"];
+    NSLog(@"number of friend: %ld", [count integerValue]);
+    
+    //start from person
+    NSNumber *avg = [person valueForKeyPath: @"products.@avg.price"];
+    NSLog(@"avg of products: %ld", [avg integerValue]);
+    
+    NSNumber *max = [person valueForKeyPath: @"products.@max.price"];
+    NSLog(@"max of products: %ld", [max integerValue]);
+    
+    NSNumber *min = [person valueForKeyPath: @"products.@min.price"];
+    NSLog(@"min of products: %ld", [min integerValue]);
+    
+    NSNumber *sum = [person valueForKeyPath: @"products.@sum.price"];
+    NSLog(@"sum of products: %ld", [sum integerValue]);
+```
+
 
