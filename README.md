@@ -338,5 +338,6 @@ void beginToFly(id self, SEL _cmd) {
     NSNumber *sum = [person valueForKeyPath: @"products.@sum.price"];
     NSLog(@"sum of products: %ld", [sum integerValue]);
 ```
-
+## [19]. bad_access_demo
+访问野指针
 
