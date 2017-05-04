@@ -341,3 +341,6 @@ void beginToFly(id self, SEL _cmd) {
 ## [19]. bad_access_demo
 访问野指针
 
+## [20]. isa_swizzle_demo
+运行时改变isa指针
+

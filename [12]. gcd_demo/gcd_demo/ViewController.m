@@ -20,10 +20,10 @@
     
 //    [self serialQueue];
 //    [self concurrentQueue];
-//    [self multiSerialQueue];
+    [self multiSerialQueue_1];
 //    [self setTargetQueue_3];
 //    [self dispatch_after];
-    [self dispatch_group];
+//    [self dispatch_group];
 //    [self dispatch_wait_3];
 //    [self dispatch_barrier];
 //    [self dispatch_sync_4];
@@ -380,8 +380,28 @@
         
         dispatch_queue_t queue = dispatch_queue_create("different serial queue", NULL);
         dispatch_async(queue, ^{
-            NSLog(@"serial queue index : %ld",index);
+            NSLog(@"serial queue index : %@",[NSThread currentThread]);
         });
+    }
+}
+
+//dispatch_sync 不开启线程 ； dispatch_async 开启线程
+- (void)multiSerialQueue_1
+{
+    for (NSInteger index = 0; index < 20; index ++) {
+        
+        dispatch_queue_t queue = dispatch_queue_create("different serial queue", NULL);
+        
+        if (index%2 == 0) {
+            dispatch_sync(queue, ^{
+                NSLog(@"serial queue index : %@",[NSThread currentThread]);
+            });
+        }else{
+            dispatch_async(queue, ^{
+                NSLog(@"serial queue index : %@",[NSThread currentThread]);
+            });
+        }
+        
     }
 }
 
