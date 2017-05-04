@@ -344,3 +344,27 @@ void beginToFly(id self, SEL _cmd) {
 ## [20]. isa_swizzle_demo
 运行时改变isa指针
 
+## [21]. getClass_and_class
+class方法与object_getClass方法的区别
+```objc
+//object
+    Person *p = [[Person alloc] init];
+    NSLog(@"object class: %p",[p class]);                       //0x104660f18(up to class object)
+    NSLog(@"object getClass: %p",object_getClass(p));           //0x104660f18(up to class object)
+    
+    //class object
+    Class classObj = [p class];
+    NSLog(@"classObj class: %p",[classObj class]);              //0x104660f18(class object self)
+    NSLog(@"classObj getClass: %p",object_getClass(classObj));  //0x104660ef0(up to meta class object)
+    
+    //meta class object
+    Class metaClassObj = object_getClass(classObj);
+    NSLog(@"metaClassObj class: %p",[metaClassObj class]);              //0x104660ef0(meta class object self)
+    NSLog(@"metaClassObj getClass: %p",object_getClass(metaClassObj));  //0x104ffee08(up to root meta class obj)
+    
+    //root meta class object
+    Class rootMetaClassObj = object_getClass(metaClassObj);
+    NSLog(@"rootMetaClassObj class: %p",[rootMetaClassObj class]);              //0x104ffee08(root meta class self)
+    NSLog(@"rootMetaClassObj getClass: %p",object_getClass(rootMetaClassObj));  //0x104ffee08(root meta class self)
+```
+
