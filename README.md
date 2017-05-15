@@ -368,3 +368,6 @@ class方法与object_getClass方法的区别
     NSLog(@"rootMetaClassObj getClass: %p",object_getClass(rootMetaClassObj));  //0x104ffee08(root meta class self)
 ```
 
+## [22]. ismemberofclass_iskindofclass_demo
+isMemberOfClass:和isKindOfClass的区别
+
