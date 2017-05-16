@@ -371,3 +371,6 @@ class方法与object_getClass方法的区别
 ## [22]. ismemberofclass_iskindofclass_demo
 isMemberOfClass:和isKindOfClass的区别
 
+## [23]. same_color_demo
+判断color是否一致
+
