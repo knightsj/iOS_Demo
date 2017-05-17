@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB3705FF1EC5596700AE533F"
-               BuildableName = "dictionary_demo.app"
-               BlueprintName = "dictionary_demo"
-               ReferencedContainer = "container:dictionary_demo.xcodeproj">
+               BlueprintIdentifier = "CB49636E1E7CD54D00413ABB"
+               BuildableName = "colorsame.app"
+               BlueprintName = "colorsame"
+               ReferencedContainer = "container:colorsame.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB3706181EC5596700AE533F"
-               BuildableName = "dictionary_demoTests.xctest"
-               BlueprintName = "dictionary_demoTests"
-               ReferencedContainer = "container:dictionary_demo.xcodeproj">
+               BlueprintIdentifier = "CB4963871E7CD54E00413ABB"
+               BuildableName = "colorsameTests.xctest"
+               BlueprintName = "colorsameTests"
+               ReferencedContainer = "container:colorsame.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB3706231EC5596700AE533F"
-               BuildableName = "dictionary_demoUITests.xctest"
-               BlueprintName = "dictionary_demoUITests"
-               ReferencedContainer = "container:dictionary_demo.xcodeproj">
+               BlueprintIdentifier = "CB4963921E7CD54E00413ABB"
+               BuildableName = "colorsameUITests.xctest"
+               BlueprintName = "colorsameUITests"
+               ReferencedContainer = "container:colorsame.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB3705FF1EC5596700AE533F"
-            BuildableName = "dictionary_demo.app"
-            BlueprintName = "dictionary_demo"
-            ReferencedContainer = "container:dictionary_demo.xcodeproj">
+            BlueprintIdentifier = "CB49636E1E7CD54D00413ABB"
+            BuildableName = "colorsame.app"
+            BlueprintName = "colorsame"
+            ReferencedContainer = "container:colorsame.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB3705FF1EC5596700AE533F"
-            BuildableName = "dictionary_demo.app"
-            BlueprintName = "dictionary_demo"
-            ReferencedContainer = "container:dictionary_demo.xcodeproj">
+            BlueprintIdentifier = "CB49636E1E7CD54D00413ABB"
+            BuildableName = "colorsame.app"
+            BlueprintName = "colorsame"
+            ReferencedContainer = "container:colorsame.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB3705FF1EC5596700AE533F"
-            BuildableName = "dictionary_demo.app"
-            BlueprintName = "dictionary_demo"
-            ReferencedContainer = "container:dictionary_demo.xcodeproj">
+            BlueprintIdentifier = "CB49636E1E7CD54D00413ABB"
+            BuildableName = "colorsame.app"
+            BlueprintName = "colorsame"
+            ReferencedContainer = "container:colorsame.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

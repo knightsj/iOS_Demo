@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>dictionary_demo.xcscheme</key>
+		<key>colorsame.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>CB3705FF1EC5596700AE533F</key>
+		<key>CB49636E1E7CD54D00413ABB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB3706181EC5596700AE533F</key>
+		<key>CB4963871E7CD54E00413ABB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB3706231EC5596700AE533F</key>
+		<key>CB4963921E7CD54E00413ABB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

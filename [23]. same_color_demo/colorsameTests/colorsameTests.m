@@ -1,18 +1,18 @@
 //
-//  dictionary_demoTests.m
-//  dictionary_demoTests
+//  colorsameTests.m
+//  colorsameTests
 //
-//  Created by Sun Shijie on 2017/5/12.
+//  Created by Sun Shijie on 2017/3/18.
 //  Copyright © 2017年 Shijie. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface dictionary_demoTests : XCTestCase
+@interface colorsameTests : XCTestCase
 
 @end
 
-@implementation dictionary_demoTests
+@implementation colorsameTests
 
 - (void)setUp {
     [super setUp];
