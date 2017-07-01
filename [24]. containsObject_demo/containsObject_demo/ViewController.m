@@ -23,7 +23,7 @@
     NSArray *array = @[string1,@"4234",@"435345"];
     
     
-    NSString *string2 = [NSString stringWithFormat:@"12"];
+    NSString *string2 = [NSString stringWithFormat:@"123"];
     NSLog(@"%p %p",string1,string2);
     
     NSLog(@"%ld %ld",string1.hash,string2.hash);

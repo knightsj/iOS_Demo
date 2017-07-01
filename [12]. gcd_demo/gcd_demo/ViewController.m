@@ -20,12 +20,12 @@
     
 //    [self serialQueue];
 //    [self concurrentQueue];
-    [self multiSerialQueue_1];
+//    [self multiSerialQueue_1];
 //    [self setTargetQueue_3];
 //    [self dispatch_after];
 //    [self dispatch_group];
 //    [self dispatch_wait_3];
-//    [self dispatch_barrier];
+    [self dispatch_barrier];
 //    [self dispatch_sync_4];
 //    [self dispatch_apply_3];
 //    [self dispatch_once_1];
@@ -170,6 +170,7 @@
 - (void)dispatch_barrier
 {
     dispatch_queue_t meetingQueue = dispatch_queue_create("com.meeting.queue", DISPATCH_QUEUE_CONCURRENT);
+//    dispatch_queue_t meetingQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(meetingQueue, ^{
         NSLog(@"总裁查看合同");
@@ -185,6 +186,29 @@
     
     dispatch_async(meetingQueue, ^{
         NSLog(@"董事3查看合同");
+    });
+    
+    dispatch_async(meetingQueue, ^{
+        NSLog(@"董事1查看合同");
+    });
+    dispatch_async(meetingQueue, ^{
+        NSLog(@"董事1查看合同");
+    });
+    dispatch_async(meetingQueue, ^{
+        NSLog(@"董事1查看合同");
+    });
+    dispatch_async(meetingQueue, ^{
+        NSLog(@"董事1查看合同");
+    });
+    dispatch_async(meetingQueue, ^{
+        NSLog(@"董事1查看合同");
+    });dispatch_async(meetingQueue, ^{
+        NSLog(@"董事1查看合同");
+    });dispatch_async(meetingQueue, ^{
+        NSLog(@"董事1查看合同");
+    });
+    dispatch_async(meetingQueue, ^{
+        NSLog(@"董事1查看合同");
     });
     
     dispatch_barrier_async(meetingQueue, ^{
