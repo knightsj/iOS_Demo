@@ -345,7 +345,7 @@ void beginToFly(id self, SEL _cmd) {
 运行时改变isa指针
 
 ## [21]. getClass_and_class
-class方法与object_getClass方法的区别
+对象，类对象，元类的class方法与object_getClass方法的区别
 ```objc
 //object
     Person *p = [[Person alloc] init];
@@ -368,5 +368,24 @@ class方法与object_getClass方法的区别
     NSLog(@"rootMetaClassObj getClass: %p",object_getClass(rootMetaClassObj));  //0x104ffee08(root meta class self)
 ```
 
+## [22]. dictionary_demo
+
+关于NSDictionary的demo
+
+## [23]. appdelegate_demo
+
+关于appDelegate的几个方法调用的时机
+
+## [24]. same_color_demo
+
+如何判断两个颜色相等
+
+## [25] containsObject_demo
+
+数组里判断是否包含某个对象
+
+## [26] indexset_demo
+
+关于NSIndexSet的使用
 
 
