@@ -388,4 +388,26 @@ void beginToFly(id self, SEL _cmd) {
 
 关于NSIndexSet的使用
 
+## [27]. private_method_demo
+
+performSelector 可以调用.m文件里的方法
+
+## [28]. setter_getter_demo
+
+setter 和 getter共存的时候必须要实现 @synthesize
+
+```objc
+@synthesize name=_name;
+
+- (void)setName:(NSString *)name
+{
+    _name = name;
+}
+
+- (NSString *)name
+{
+    return self.name;
+}
+```
+
 
