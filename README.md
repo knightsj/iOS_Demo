@@ -410,4 +410,7 @@ setter 和 getter共存的时候必须要实现 @synthesize
 }
 ```
 
+## [29]. touch_demo
+父视图与子视图的点击
+
 
