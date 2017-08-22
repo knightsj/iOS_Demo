@@ -417,3 +417,7 @@ setter 和 getter共存的时候必须要实现 @synthesize
 delete the @"" values in a dict
 
 
+##[31]. string_demo
+
+ NSString的一些copy和mutableCopy的操作
+
