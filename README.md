@@ -421,3 +421,9 @@ delete the @"" values in a dict
 
  NSString的一些copy和mutableCopy的操作
 
+
+
+## [32]. find_viewController
+
+给view添加一个分类方法，找到对应的viewController(可顺延父view向上查找)
+
