@@ -427,3 +427,11 @@ delete the @"" values in a dict
 
 给view添加一个分类方法，找到对应的viewController(可顺延父view向上查找)
 
+
+
+## [33]. copy_mCopy_array
+
+查看可变数组和不可变数组的copy和mutable copy下的 指针和元素指针。
+
+
+
