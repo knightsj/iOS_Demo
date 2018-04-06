@@ -444,3 +444,9 @@ delete the @"" values in a dict
 ## [35]. message_forward
 
 iOS消息转发实践的demo
+
+
+
+## [36]. static_demo
+
+比较 static 和 const的不同
