@@ -459,3 +459,6 @@ iOS消息转发实践的demo
 
 
 
+## [38]. stringRetainCount
+
+string的引用计数

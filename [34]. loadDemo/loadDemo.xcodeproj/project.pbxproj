@@ -21,6 +21,10 @@
 		CBC879B72060920800AF31FC /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC879B62060920800AF31FC /* Student.m */; };
 		CBC879BD2060934000AF31FC /* Student+good.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC879BC2060934000AF31FC /* Student+good.m */; };
 		CBC879C02060935B00AF31FC /* Person+man.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC879BF2060935B00AF31FC /* Person+man.m */; };
+		CBD2BC2C209ED924004D27B2 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD2BC2B209ED924004D27B2 /* Human.m */; };
+		CBD2BC2F209ED95E004D27B2 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD2BC2E209ED95E004D27B2 /* People.m */; };
+		CBD2BC32209ED9D0004D27B2 /* Human+oridary.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD2BC31209ED9D0004D27B2 /* Human+oridary.m */; };
+		CBD2BC35209ED9FA004D27B2 /* Human+Bad.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD2BC34209ED9FA004D27B2 /* Human+Bad.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,14 @@
 		CBC879BC2060934000AF31FC /* Student+good.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Student+good.m"; sourceTree = "<group>"; };
 		CBC879BE2060935B00AF31FC /* Person+man.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+man.h"; sourceTree = "<group>"; };
 		CBC879BF2060935B00AF31FC /* Person+man.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+man.m"; sourceTree = "<group>"; };
+		CBD2BC2A209ED924004D27B2 /* Human.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
+		CBD2BC2B209ED924004D27B2 /* Human.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Human.m; sourceTree = "<group>"; };
+		CBD2BC2D209ED95E004D27B2 /* People.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
+		CBD2BC2E209ED95E004D27B2 /* People.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
+		CBD2BC30209ED9D0004D27B2 /* Human+oridary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Human+oridary.h"; sourceTree = "<group>"; };
+		CBD2BC31209ED9D0004D27B2 /* Human+oridary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Human+oridary.m"; sourceTree = "<group>"; };
+		CBD2BC33209ED9FA004D27B2 /* Human+Bad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Human+Bad.h"; sourceTree = "<group>"; };
+		CBD2BC34209ED9FA004D27B2 /* Human+Bad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Human+Bad.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +136,14 @@
 				CBC87983206091A900AF31FC /* ViewController.h */,
 				CBC87984206091A900AF31FC /* ViewController.m */,
 				CBC879B2206091C700AF31FC /* Person.h */,
+				CBD2BC30209ED9D0004D27B2 /* Human+oridary.h */,
+				CBD2BC33209ED9FA004D27B2 /* Human+Bad.h */,
+				CBD2BC34209ED9FA004D27B2 /* Human+Bad.m */,
+				CBD2BC31209ED9D0004D27B2 /* Human+oridary.m */,
+				CBD2BC2A209ED924004D27B2 /* Human.h */,
+				CBD2BC2B209ED924004D27B2 /* Human.m */,
+				CBD2BC2D209ED95E004D27B2 /* People.h */,
+				CBD2BC2E209ED95E004D27B2 /* People.m */,
 				CBC879B3206091C700AF31FC /* Person.m */,
 				CBC87986206091A900AF31FC /* Main.storyboard */,
 				CBC87989206091A900AF31FC /* Assets.xcassets */,
@@ -295,13 +315,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD2BC32209ED9D0004D27B2 /* Human+oridary.m in Sources */,
 				CBC87985206091A900AF31FC /* ViewController.m in Sources */,
 				CBC87990206091A900AF31FC /* main.m in Sources */,
 				CBC879B72060920800AF31FC /* Student.m in Sources */,
 				CBC879B4206091C700AF31FC /* Person.m in Sources */,
 				CBB580AC206B923C00F1C509 /* PP+lalala.m in Sources */,
+				CBD2BC35209ED9FA004D27B2 /* Human+Bad.m in Sources */,
+				CBD2BC2F209ED95E004D27B2 /* People.m in Sources */,
 				CBC879C02060935B00AF31FC /* Person+man.m in Sources */,
 				CBC879BD2060934000AF31FC /* Student+good.m in Sources */,
+				CBD2BC2C209ED924004D27B2 /* Human.m in Sources */,
 				CBC87982206091A900AF31FC /* AppDelegate.m in Sources */,
 				CBB580A9206B913900F1C509 /* PP.m in Sources */,
 			);
